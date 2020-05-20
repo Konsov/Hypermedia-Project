@@ -19,3 +19,42 @@
     font-size:80px;
     color: white
 }
+
+
+
+.container_title {
+    text-align: left;
+    position: absolute;
+    top:50px;
+    left:50px;
+    width:80
+}
+
+.container_title span{
+  text-transform: uppercase;
+  display: block;
+}
+
+.text1 {
+  color:white;  
+  font-size: 10vw;
+  font-weight: bold;
+  letter-spacing: 8px;
+  margin-bottom: 150px; 
+  position: relative; 
+  animation: text 2s 1;
+}
+
+.text2 {
+    color:white; 
+    font-size: 7vw;
+    animation: text 5s 1;
+}
+
+@keyframes text {
+    0%{
+        color:transparent;
+        margin-left: 100px;
+    }
+
+}
