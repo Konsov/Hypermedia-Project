@@ -1,5 +1,11 @@
 var express = require('express')
 var app = express()
+app.use(express.json())
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./backend/spec.yaml');
+
+app.use('/backend/swaggerui', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const { Pool } = require('pg');
 const pool = new Pool({
@@ -10,9 +16,49 @@ const pool = new Pool({
     database: "d6brmv5hu2coro"
 });
 
-pool.connect()
-.then(() => console.log("Connected successfuly"))
 
+
+start()
+async function start(){
+  await connect()
+}
+
+async function connect() {
+  try {
+    await pool.connect()
+    console.log("Connected")
+  } catch (e){
+    console.error(`Failed to connect ${e}`)
+  }
+}
+
+async function readEmployee() {
+  try {
+    const result = await pool.query("select * from person")
+    return result.rows
+  } catch(e) {
+    return e
+  }
+}
+
+async function createEmployees(employeeName){
+  try {
+    await pool.query("insert into employees (name) values ($1)", [employeeName])
+    return true
+  } catch(e) {
+    console.log(e)
+    return false
+  }
+}
+
+async function deleteEmployees(id){
+  try {
+    await pool.query("delete from employees where id = $1", [id])
+    return true
+  } catch {
+    return false
+  }
+}
 //set port
 var port = process.env.PORT || 8080
 
@@ -23,7 +69,30 @@ app.get("/",function(req, res){
     res.render("index")
 })
 
+app.get("/backend/person", async (req,res) => {
+  const rows = await readEmployee()
+  res.setHeader("content-type", "application/json")
+  res.send(JSON.stringify(rows))
+})
+
+app.post("/backend", async (req,res) => {
+  let result= {}
+  try {
+    const reqJson = req.body;
+    await createEmployees(reqJson.todo)
+    result.success = true
+  } catch (e){
+    result.success = false
+  }finally {
+    res.setHeader("content-type", "application/json")
+    res.send(JSON.stringify(result))
+  }
+})
 
 app.listen(port, function(){
     console.log("App Running " + port + " "+ pool)
+})
+
+app.get('/person', function(req,res,next) {
+  res.json([{id: 4, name: "Mario Rossi"}])
 })
