@@ -9,12 +9,20 @@ app.use('/backend/swaggerui', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 const { Pool } = require('pg');
 const pool = new Pool({
+    user: "postgres",
+    password: "postgres",
+    host: "localhost",
+    port: 5432,
+    database: "postgres"
+});
+
+/*const pool = new Pool({
     user: "gkhdthfcbqtvvx",
     password: "65dfcca59ab75b6a0e957d537cf7fe3c2cb6f47ea41b25b982338a096c231549",
     host: "ec2-54-246-85-151.eu-west-1.compute.amazonaws.com",
     port: 5432,
     database: "d6brmv5hu2coro"
-});
+});*/
 
 
 
@@ -32,9 +40,29 @@ async function connect() {
   }
 }
 
-async function readEmployee() {
+async function readEmployees() {
   try {
     const result = await pool.query("select * from person")
+    return result.rows
+  } catch(e) {
+    return e
+  }
+}
+
+async function readEmployee(data) {
+  try {
+    const result = await pool.query("select * from person where id=$1",[data])
+    return result.rows
+  } catch(e) {
+    return e
+  }
+}
+
+async function readEmployeeService(data) {
+  try {
+    const result = await pool.query("select id, name, description from service where id IN "+ 
+                                    "(SELECT id_service FROM person_involved where id_person " +
+                                    "IN (SELECT id FROM person where id =$1))",[data])
     return result.rows
   } catch(e) {
     return e
@@ -70,7 +98,21 @@ app.get("/",function(req, res){
 })
 
 app.get("/backend/person", async (req,res) => {
-  const rows = await readEmployee()
+  const rows = await readEmployees()
+  res.setHeader("content-type", "application/json")
+  res.send(JSON.stringify(rows))
+})
+
+app.get("/backend/person/:id", async (req,res) => {
+  const rows = await readEmployee(req.params.id)
+ 
+  res.setHeader("content-type", "application/json")
+  res.send(JSON.stringify(rows[0]))
+})
+
+app.get("/backend/person/:id/service", async (req,res) => {
+  const rows = await readEmployeeService(req.params.id)
+ 
   res.setHeader("content-type", "application/json")
   res.send(JSON.stringify(rows))
 })

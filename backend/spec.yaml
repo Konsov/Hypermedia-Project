@@ -14,7 +14,7 @@ info:
 servers:
 - url: https://hypproject1920.herokuapp.com/backend
   description: Production server (uses live data)
-- url: https://localhost:5000/
+- url: https://localhost:5000/backend
   description: local server (uses test data)
 paths:
   /person:
