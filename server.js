@@ -10,7 +10,7 @@ app.use('/backend/swaggerui', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 const { Pool } = require('pg');
 const pool = new Pool({
     user: "postgres",
-    password: "postgres",
+    password: "postgre",
     host: "localhost",
     port: 5432,
     database: "postgres"
