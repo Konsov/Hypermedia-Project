@@ -31,11 +31,11 @@ const jsyaml = require('js-yaml'),
 let {
   setupDataLayer
 } = require("./service/DataLayer");
-/*
+
 let {
   downloadRepoZip
 } = require('./utils/zipDownloader');
-*/
+
 
 // swaggerRouter configuration
 var options = {
