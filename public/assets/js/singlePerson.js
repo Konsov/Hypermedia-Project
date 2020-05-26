@@ -24,7 +24,7 @@ var id = getUrlParameter('id');
 
 $(window).on("load",function () {
 
-    $.getJSON('/backend/person/'+id, function (person) { 
+    $.getJSON('/api/person/'+id, function (person) { 
         
         // GET BOOK BY ID /api/book/{bookId}
         console.log(person);
