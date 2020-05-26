@@ -4,8 +4,7 @@ const curl = new Curl(),
       fs = require('fs');
 
 const headers = [
-    `Authorization: token ${process.env.GITHUB_TOKEN}`,
-    "Accept: application/vnd.github.v3.raw"
+    `Authorization: token ${process.env.GITHUB_TOKEN}`
 ];
 
 exports.downloadRepoZip = function dowloadRepoZip () {

@@ -39,7 +39,7 @@ exports.projectGET = function() {
  **/
 exports.projectIdGET = function(id) {
   return new Promise(function(resolve, reject) {
-    sqlDb.select('id','status','description','starting_date','ending_date')
+    sqlDb.select('id','name','status','description','starting_date','ending_date')
     .from('project')
     .where('id',id)
     .then(response => {

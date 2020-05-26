@@ -30,7 +30,7 @@ paths:
     get:
       tags:
       - "person"
-      description: "Obtain information about the people working in the compnay"
+      description: "Obtain information about the people working in the company"
       operationId: "personGET"
       parameters:
       - name: "bodyLimit"
@@ -454,7 +454,8 @@ definitions:
         example: "finish"
         enum:
         - "finish"
-        - "not finish"
+        - "in progress"
+        - "not started"
       description:
         type: "string"
         example: "Recupero e valorizzazione agricola e forestale, nonché didattico – ricreativa della piana di Castensago"

@@ -69,19 +69,20 @@ available <a href="https://github.com/Konsov/Hypermedia-Project-/">this
 address</a>.
 We hereby declare that this
 is a private repository and, upon request, we will give access to the
-instructors.
+instructors.</li>
+</ul>
 
+<br>
 <h2>Specification</h2>
 
 <h3>Web Architecture</h3>
 
 <p><strong>Describe here, with a diagram, the components of your web application and how
 they interact. Highlight which parts belong to the application layer, data layer
-or presentation layer. How did you ensure that HTML is not rendered server side?</strong></p></li>
-</ul>
+or presentation layer. How did you ensure that HTML is not rendered server side?</strong></p>
 
 
-<p><img src="components.png" title="Component Diagram" alt="Component Diagram" /></p>
+<p>component image</p>
 
 <p>Our web application serves statically the folder containing the html pages and other assets such as scripts, images and style sheets; all the other data is produced by the backend in JSON format, then is retrieved and rendered on the pages by the client JavaScript code. By following this pattern we are sure that HTML code is never rendered server-side.</p>
 
@@ -96,9 +97,9 @@ the whole API here, just the design decisions.</p>
 <p>We did follow the following REST principles:</p>
 
 <ul>
-<li><p><strong>Statelessness</strong>: Every request contains all the informations needed to perform the request. There are some request who require authentication: in this case the client must send the cookie containing the session token to authenticate himself. However, for security and performance reasons, we store session data on the server, so there is no need to repeatedly access to the database during an user&rsquo;s session.</p></li>
+<li><p><strong>Statelessness</strong>: Every request contains all the informations needed to perform the request.</p></li>
 <li><p><strong>Uniform interfaces</strong>: Every component in the web server always follow the same rules to communicate with each other: in our project, controllers always call the corresponding method on the corresponding services, retrieve the data, call the JSON generator function that finally sends data to the client.
-All the URIs follow the same naming convention (for example, all requests regarding books start with /books, and so on), response codes follow HTTP conventions (200 for succesful response, 404 when resource is not found, 401 if the client fails authorization and so on so forth) and finally all the requests methods are coherent with the actual operation carried out when this specific request is invoked, as specified by <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP methods conventions</a>.</p></li>
+All the URIs follow the same naming convention (for example, all requests regarding event start with /event, and so on), response codes follow HTTP conventions (200 for succesful response, 404 when resource is not found) and finally all the requests methods are coherent with the actual operation carried out when this specific request is invoked, as specified by <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP methods conventions</a>.</p></li>
 <li><p><strong>Layered System</strong>: Every component interacts transparently to the others: also, every component has its well-defined task: the modularity of the application obtained in this way makes it easier to understand and to extend or modify the single components of the systems without worrying about the others.</p></li>
 <li><p><strong>Client-Server</strong>: Client and server can evolve separately: there is no dependency on the technologies used under the hood in these two components; client only knows URIs to get the resources and server sends them transparently with a standard representation (JSON in our case).</p></li>
 </ul>
@@ -109,19 +110,10 @@ All the URIs follow the same naming convention (for example, all requests regard
 <p><strong>Describe here synthetically, which models you have introduced for resources.</strong></p>
 
 <ul>
-<li><strong>User</strong>: Contains relevant information about a user registered to the application.</li>
-<li><strong>Cart</strong>: List of items that a User is willing to buy. Contains the list of Book instances and the total amount</li>
-<li><strong>Book</strong>: All the informations about a book.</li>
-<li><strong>Amount</strong>: An amount of money.</li>
-<li><strong>Currency</strong>: Currency referred to an instance of Amount.</li>
-<li><strong>Author</strong>: The author of a book; includes its name, a photo and, optionally, a biography.</li>
-<li><strong>Address</strong>: An address, used in many contexts inside the application.</li>
-<li><strong>Event</strong>: Contains all relevant informations about an event in wich a book is presented.</li>
-<li><strong>Publisher</strong>: The publisher or editor of a Book</li>
-<li><strong>Genre</strong>: A genre of a book</li>
-<li><strong>Theme</strong>: A theme of a book</li>
-<li><strong>Review</strong>: The review of a book, that a user can write.</li>
-<li><strong>Order</strong>: An Order made by a user. Contains relevant informations such shipping address, total price and payment method.</li>
+<li><strong>Person</strong>: Contains relevant information about a person working in the company.</li>
+<li><strong>Event</strong>: Contains all relevant informations about an event in which some service is presented.</li>
+<li><strong>Service</strong>: Contains the relevant information about service provided by the association.</li>
+<li><strong>Project</strong>: Information about the current, past and new project.</li>
 </ul>
 
 
@@ -148,12 +140,8 @@ The backend is written in JavaScript on NodeJS version 10.6.</p>
 
 <ul>
 <li><p>(express)[https://www.npmjs.com/package/express], to route the requests to the server</p></li>
-<li><p><a href="https://www.npmjs.com/package/express">express-session</a>, to manage session and authenti
-cation with cookies;</p></li>
 <li><p><a href="https://knexjs.org/">KnexJS</a>, to build queries and to interface to the database;</p></li>
-<li><p><a href="https://www.npmjs.com/package/bcrypt">bcrypt</a>, to encrypt password and store their hashed representation on the database, for security reasons;</p></li>
 <li><p><a href="https://www.npmjs.com/package/bluebird">bluebird</a>, an alternative <em>Promise</em> implementation;</p></li>
-<li><p><a href="https://www.npmjs.com/package/sanitize-html">sanitize-html</a>, to clean input text from potentially dangerous HTML (and JavaScript) code, as a countermeasure towards CSRF and XSS attacks.</p></li>
 </ul>
 
 
@@ -176,17 +164,8 @@ the web application (static assets vs. application data)</strong></li>
 <p>Our applications contains all the static assets in a single folder, <em>public/</em>, that is served statically and accessible on the root of the application. APIs endpoints are accessible at <em>api/</em>. The folders are organized exactly as generated by Swagger, plus the folder other</p>
 
 <ul>
-<li><strong>Describe synthetically why and how did you manage session state, what are the
-state change triggering actions (e.g., POST to login etc..)</strong></li>
-</ul>
-
-
-<p>For managing session we used the npm package express-session, which transparently allows to generate a cookie based session by providing a secret string used to encrypt the cookie. A session object is then provided, we wrote a wrapper around it with getters and setters, to avoid conflicts while modifying it and also to make the application more modular.
-The session data is saved in the <em>req.session</em> object; to map each session to the corresponding clients we set an attribute to the <em>req.session</em> object named as the sessionID. This allows multiple users access at the same time on different clients, as a website is supposed to behave.</p>
-
-<ul>
 <li><strong>Which technology did you use (relational or a no-SQL database) for managing
-the data model?</strong></li>
+the data model?   DA RIVEDERE</strong></li>
 </ul>
 
 
@@ -207,9 +186,8 @@ We exploited many functionalities offered by this system, by making extensive us
 <h3>Task assignment</h3>
 
 <ul>
-<li><p>Luca: Worked on back-end and OpenAPI Specs 70% of the time; front-end scripts and rendering 20% of the time, documentations on 10%</p></li>
-<li><p>Marco: Worked on backend and OpenAPI Specs 20% of the time, front-end scripts and rendering 70%, documentations 10%</p></li>
-<li><p>Alessandro: Worked on front-end 70% of the time, documentations and site evaluation 30% of the time.</p></li>
+<li><p>Luca Bianco: Worked on back-end and OpenAPI Specs 70% of the time; front-end scripts and rendering 20% of the time, documentations on 10%</p></li>
+<li><p>Luca Consonni: Worked on backend and OpenAPI Specs 10% of the time, front-end scripts and rendering 80%, documentations 10%</p></li>
 </ul>
 
 
