@@ -52,8 +52,8 @@ var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
 //Salvo il file zip della repo e lo rendo disponibile staticamente
-/*
-if (process.env.SERVEZIP && process.env.GITHUB_TOKEN && process.env.GITHUB_URL) {
+
+if (process.env.GITHUB_TOKEN && process.env.GITHUB_URL) {
   downloadRepoZip()
     .then(() => {
       console.info('Repo Zip saved! Serving it on /backend/app.zip');
@@ -64,7 +64,7 @@ if (process.env.SERVEZIP && process.env.GITHUB_TOKEN && process.env.GITHUB_URL) 
 }
 
 app.use('/backend/app.zip', express.static('app.zip'));
-*/
+
 
 
 
