@@ -24,7 +24,7 @@ tags:
 - name: "project"
   description: "Everything about project"
 schemes:
-- "http"
+- "https"
 paths:
   /person:
     get:
