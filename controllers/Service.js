@@ -24,6 +24,17 @@ module.exports.serviceIdEventGET = function serviceIdEventGET (req, res, next) {
     });
 };
 
+module.exports.serviceIdPhotoGET = function serviceIdEventGET (req, res, next) {
+  var id = req.swagger.params['id'].value;
+  Service.serviceIdPhotoGET(id)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
 module.exports.serviceIdGET = function serviceIdGET (req, res, next) {
   var id = req.swagger.params['id'].value;
   Service.serviceIdGET(id)

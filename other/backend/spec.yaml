@@ -7,7 +7,7 @@ info:
   title: "Eco Vibes API"
   contact:
     name: "Bianco_Consonni"
-    url: "http://localhost:5000/pages/contact.html"
+    url: "https://hypproject1920.herokuapp.com/pages/contact.html"
     email: "bianco_consonni@ecovibes.com"
   license:
     name: "Eco Vibes License"

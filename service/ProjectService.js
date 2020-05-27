@@ -74,3 +74,16 @@ exports.projectIdServiceGET = function(id) {
   });
 }
 
+exports.projectIdPhotoGET = function(id) {
+  return new Promise(function(resolve, reject) {
+    sqlDb.select('id','project','url').from('project_photos').where('project',id)
+    .then(response => {
+      resolve(response);
+    })
+    .catch(err => {
+      console.error(err);
+      reject(err);
+    });
+  });
+}
+

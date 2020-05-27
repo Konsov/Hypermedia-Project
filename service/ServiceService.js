@@ -117,3 +117,16 @@ exports.serviceIdProjectGET = function(id) {
   });
 }
 
+exports.serviceIdPhotoGET = function(id) {
+  return new Promise(function(resolve, reject) {
+    sqlDb.select('id','service','url').from('service_photos').where('service',id)
+    .then(response => {
+      resolve(response);
+    })
+    .catch(err => {
+      console.error(err);
+      reject(err);
+    });
+  });
+}
+
