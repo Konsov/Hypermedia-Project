@@ -39,7 +39,7 @@ module.exports.serviceIdGET = function serviceIdGET (req, res, next) {
   var id = req.swagger.params['id'].value;
   Service.serviceIdGET(id)
     .then(function (response) {
-      utils.writeJson(res, response);
+      utils.writeJson(res, response[0]);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
