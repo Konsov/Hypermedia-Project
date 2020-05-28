@@ -3,7 +3,6 @@ $(window).on("load",function () {
     $.getJSON('/api/service', function (service) { 
         
         // GET BOOK BY ID /api/book/{bookId}
-       
         for (let i = 0; i < service.length; i++) {
             var id = service[i].id;
             var name = service[i].name;
