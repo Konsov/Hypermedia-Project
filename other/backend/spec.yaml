@@ -1,0 +1,474 @@
+---
+swagger: "2.0"
+info:
+  description: "An API that allows user to obtain existing information of service,\
+    \ event and people from Eco Vibes company"
+  version: "1.0.0"
+  title: "Eco Vibes API"
+  contact:
+    name: "Bianco_Consonni"
+    url: "https://hypproject1920.herokuapp.com/pages/contact.html"
+    email: "bianco_consonni@ecovibes.com"
+  license:
+    name: "Eco Vibes License"
+    url: "http://license.foo.com"
+host: hypproject1920.herokuapp.com
+basePath: /api
+tags:
+- name: "person"
+  description: "Everything about person"
+- name: "event"
+  description: "Everything about event"
+- name: "service"
+  description: "Everything about service"
+- name: "project"
+  description: "Everything about project"
+schemes:
+- "https"
+paths:
+  /person:
+    get:
+      tags:
+      - "person"
+      description: "Obtain information about the people working in the company"
+      operationId: "personGET"
+      parameters:
+      - name: "bodyLimit"
+        in: "query"
+        description: "The amount of people returned"
+        required: false
+        type: "integer"
+      - name: "pageLimit"
+        in: "query"
+        description: "The pages to return people info"
+        required: false
+        type: "integer"
+      responses:
+        200:
+          description: "Seccesful pull of people info"
+          schema:
+            type: "array"
+            items:
+              type: "object"
+              allOf:
+              - $ref: "#/definitions/Person"
+              x-content-type: "application/json"
+        404:
+          description: "No person found"
+      x-swagger-router-controller: "Person"
+  /person/{id}:
+    get:
+      tags:
+      - "person"
+      description: "Obtain information about specific person"
+      operationId: "personIdGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the person"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Person"
+        404:
+          description: "Person not found"
+      x-swagger-router-controller: "Person"
+  /person/{id}/service:
+    get:
+      tags:
+      - "person"
+      description: "Obtain information about service in which one person is involved"
+      operationId: "personIdServiceGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the person"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Service"
+        404:
+          description: "No service found"
+      x-swagger-router-controller: "Person"
+  /person/{id}/event:
+    get:
+      tags:
+      - "person"
+      description: "Obtain information about event in which one person is the main\
+        \ contact"
+      operationId: "personIdEventGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the person"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Event"
+        404:
+          description: "No event found found"
+      x-swagger-router-controller: "Person"
+  /event:
+    get:
+      tags:
+      - "event"
+      description: "Obtain information about event proposed by the company"
+      operationId: "eventGET"
+      parameters:
+      - name: "finished"
+        in: "query"
+        description: "If the event is finished"
+        required: false
+        type: "boolean"
+      responses:
+        200:
+          description: "Seccesful pull of event"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
+            x-content-type: "application/json"
+        404:
+          description: "No event found"
+      x-swagger-router-controller: "Event"
+  /event/{id}:
+    get:
+      tags:
+      - "event"
+      description: "Obtain information about specific event"
+      operationId: "eventIdGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the event"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Event"
+        404:
+          description: "Event not found"
+      x-swagger-router-controller: "Event"
+  /event/{id}/service:
+    get:
+      tags:
+      - "event"
+      description: "Obtain information about all the service presented in an event"
+      operationId: "eventIdServiceGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the event"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Service"
+        404:
+          description: "No service found"
+      x-swagger-router-controller: "Event"
+  /event/{id}/person:
+    get:
+      tags:
+      - "event"
+      description: "Obtain information about event in which one person is the main\
+        \ contact"
+      operationId: "eventIdPersonGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the event"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Person"
+        404:
+          description: "No event found"
+      x-swagger-router-controller: "Event"
+  /service:
+    get:
+      tags:
+      - "service"
+      description: "Obtain information about service proposed by the company"
+      operationId: "serviceGET"
+      parameters: []
+      responses:
+        200:
+          description: "Seccesful pull of service"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Service"
+            x-content-type: "application/json"
+        404:
+          description: "No event found"
+      x-swagger-router-controller: "Service"
+  /service/{id}:
+    get:
+      tags:
+      - "service"
+      description: "Obtain information about specific service"
+      operationId: "serviceIdGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the service"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Service"
+        404:
+          description: "Service not found"
+      x-swagger-router-controller: "Service"
+  /service/{id}/event:
+    get:
+      tags:
+      - "service"
+      description: "Obtain information about all the event in which a service is presented"
+      operationId: "serviceIdEventGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the person"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Event"
+        404:
+          description: "No service found"
+      x-swagger-router-controller: "Service"
+  /service/{id}/person:
+    get:
+      tags:
+      - "service"
+      description: "Obtain information about people involved in a service"
+      operationId: "serviceIdPersonGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the service"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Person"
+        404:
+          description: "No person found"
+      x-swagger-router-controller: "Service"
+  /service/{id}/project:
+    get:
+      tags:
+      - "service"
+      description: "Obtain information about all project involved in a service"
+      operationId: "serviceIdProjectGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the service"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Project"
+        404:
+          description: "No event found found"
+      x-swagger-router-controller: "Service"
+  /project:
+    get:
+      tags:
+      - "project"
+      description: "Obtain information about project made by the company"
+      operationId: "projectGET"
+      parameters: []
+      responses:
+        200:
+          description: "Seccesful pull of project"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Project"
+            x-content-type: "application/json"
+        404:
+          description: "No event found"
+      x-swagger-router-controller: "Project"
+  /project/{id}:
+    get:
+      tags:
+      - "project"
+      description: "Obtain information about specific project"
+      operationId: "projectIdGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the project"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Project"
+        404:
+          description: "Project not found"
+      x-swagger-router-controller: "Project"
+  /project/{id}/service:
+    get:
+      tags:
+      - "project"
+      description: "Obtain information about all the service linked to a specific project"
+      operationId: "projectIdServiceGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the project"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Service"
+        404:
+          description: "No service found"
+      x-swagger-router-controller: "Project"
+definitions:
+  Person:
+    properties:
+      id:
+        type: "integer"
+        example: 4
+      name:
+        type: "string"
+        example: "Mario Rossi"
+      age:
+        type: "integer"
+        example: 26
+      role:
+        type: "string"
+        example: "Head HR"
+      profession:
+        type: "string"
+        example: "Manager HR"
+      short description:
+        type: "string"
+        example: "Head of the HR office from the start of the company"
+      email:
+        type: "string"
+        example: "mario.rossi@ecovibes.com"
+    description: "Model containing the person info"
+    example:
+      profession: "Manager HR"
+      role: "Head HR"
+      name: "Mario Rossi"
+      short_description: "Head of the HR office from the start of the company"
+      id: 4
+      age: 26
+      email: "mario.rossi@ecovibes.com"
+  Service:
+    properties:
+      id:
+        type: "integer"
+        example: 4
+      name:
+        type: "string"
+        example: "Cleaning City"
+      description:
+        type: "string"
+        example: "We keep our cities clean by collecting and recycling the garbage and waste that degrades the streets and urban spaces"
+    description: "Model containing the service info"
+    example:
+      name: "Cleaning City"
+      description: "We keep our cities clean by collecting and recycling the garbagen and waste that degrades the streets and urban spaces"
+      id: 4
+  Event:
+    properties:
+      id:
+        type: "integer"
+        example: 4
+      name:
+        type: "string"
+        example: "Eco culture in the wild"
+      contact:
+        $ref: "#/definitions/Person"
+      text_description:
+        type: "string"
+        example: "Event to support th riqualification of the wild area in Liguria"
+      starting_date:
+        type: "string"
+        example: "2020-04-01T00:00:00.000Z"
+      ending_date:
+        type: "string"
+        example: "2020-07-01T00:00:00.000Z"
+      image:
+        type: "string"
+        example: "https://ecocontrol.ch/wp-content/uploads/2017/10/3.1-Castensagow.jpg"
+    description: "Model containing the event info"
+    example:
+      name: "Eco culture in the wild"
+      text_description: "Event to support th riqualification of the wild area in Liguria"
+      id: 4
+      contact:
+        profession: "Manager HR"
+        role: "Head HR"
+        name: "Mario Rossi"
+        short_description: "Head of the HR office from the start of the company"
+        id: 4
+        age: 26
+        email: "mario.rossi@ecovibes.com"
+      starting_date: "2020-04-01T00:00:00.000Z"
+      ending_date: "2020-07-01T00:00:00.000Z"
+      image: "ttps://ecocontrol.ch/wp-content/uploads/2017/10/3.1-Castensagow.jpg"
+  Project:
+    properties:
+      id:
+        type: "integer"
+        example: 4
+      status:
+        type: "string"
+        example: "finish"
+        enum:
+        - "finish"
+        - "in progress"
+        - "not started"
+      description:
+        type: "string"
+        example: "Recupero e valorizzazione agricola e forestale, nonché didattico – ricreativa della piana di Castensago"
+      starting_date:
+        type: "string"
+        example: "2020-04-01T00:00:00.000Z"
+      ending_date:
+        type: "string"
+        example: "2020-07-08T00:00:00.000Z"
+    description: "Model containing the project info"
+    example:
+      name: 4
+      status: "not finish"
+      description: "Recupero e valorizzazione agricola e forestale, nonché didattico – ricreativa della piana di Castensago"
+      starting_date: "2020-04-01T00:00:00.000Z"
+      ending_date: "2020-07-08T00:00:00.000Z"

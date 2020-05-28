@@ -1,15 +1,33 @@
 {
-    "name": "hypermedia_project",
-    "version": "1.0.0",
-    "scripts": {
-        "start": "node server.js"
-    },
-    "dependencies": {
-        "express": "4.17.1",
-        "pg": "^8.2.1",
-        "swagger-ui-express": "^4.1.4",
-        "yamljs": "^0.3.0"
-    },
-    "author": "Luca Consonni",
-    "license": "ISC"
+  "name": "eco-vibes-api",
+  "version": "1.0.0",
+  "description": "An API that allows user to obtain existing information of service, event and people from Eco Vibes company",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "connect": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "express": "4.17.1",
+    "js-yaml": "^3.14.0",
+    "knex": "^0.21.1",
+    "mssql": "^6.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "node-libcurl": "^2.1.1",
+    "oas3-tools": "^2.0.2",
+    "pg": "^8.2.1",
+    "sqlite3": "^4.2.0",
+    "swagger-tools": "^0.10.4",
+    "swagger-ui-express": "^4.1.4",
+    "yamljs": "^0.3.0"
+  }
 }
