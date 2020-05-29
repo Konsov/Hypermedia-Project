@@ -70,8 +70,7 @@ $(window).on("load",function () {
                     elem +='<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>'
                     elem += '<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>'
                     elem +='</ol>'
-                    elem += '<div class="carousel-inner">'
-
+                    elem += '<div id="carousel-projects" class="carousel-inner">'
                     elem +='<div class="carousel-item active">';
                     elem +='<img src=" ' + photos[0].url + '" style="height: 500px" class="d-block w-100" alt="...">'
                     elem +='<div class="overlay">';
@@ -113,9 +112,72 @@ $(window).on("load",function () {
                     elem += '</div>';
                     elem +='</div>';
                         
-                    $(".carousel-inner").append(elem);
+                    $("#carousel-projects").append(elem);
                 }
             });
+        }
+    });
+
+    $.getJSON('/api/service/'+ id + '/event', function (events) { 
+
+        console.log(events);
+        elem = '';
+
+        for (let i = 0; i < events.length; i++) {
+
+                if(i == 0){
+                    elem +='<p class="project-title">RELATED EVENTS</p>'
+                    elem +='<div class="events">'
+                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" style="height: 500px">'
+                    elem +='<ol class="carousel-indicators">'
+                    elem +='<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>'
+                    elem +='<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>'
+                    elem += '<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>'
+                    elem +='</ol>'
+                    elem += '<div id="carousel-events" class="carousel-inner">'
+
+                    elem +='<div class="carousel-item active">';
+                    elem +='<img src=" ' + events[i].image + '" style="height: 500px" class="d-block w-100" alt="...">'
+                    elem +='<div class="overlay">';
+                    elem +='<div style="width: 100%;height: 100%;position: relative;">';
+                    elem +='<div class="centro">';
+                    elem +='<p style="color: white; font-size: large; font-weight:bold">' + events[i].name +'</p>';
+                    elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
+                    elem += ''+ events[i].text_presentation +'</p>'
+                    elem +='<a href="event.html?id='+ events[i].id+'" type="button" class="btn btn-light">Read More</a>';
+                    elem +='</div>';
+                    elem +='</div>';
+                    elem +='</div>';
+                    elem +='</div>';        
+                    elem +='<a class="carousel-control-prev" href="#carouselExampleCaptions2" role="button" data-slide="prev">';
+                    elem +='<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
+                    elem +='<span class="sr-only">Previous</span>';
+                    elem +='</a>';
+                    elem +='<a class="carousel-control-next" href="#carouselExampleCaptions2" role="button" data-slide="next">';
+                    elem +='<span class="carousel-control-next-icon" aria-hidden="true"></span>';
+                    elem +='<span class="sr-only">Next</span>';
+                    elem +='</a>';
+                    elem +='</div>';
+                    elem +='</div>';
+
+                    $(".container-events").append(elem);
+                }else{
+                    elem = '';
+                    elem+='<div class="carousel-item">';
+                    elem+='<img src=" ' + events[i].image + '" style="height: 500px" class="d-block w-100" alt="...">';
+                    elem+='<div class="overlay">'
+                    elem+='<div style="width: 100%;height: 100%;position: relative;">';
+                    elem+='<div class="centro">';
+                    elem+='<p style="color: white; font-size: large; font-weight:bold">' +  events[i].name  +  '</p>';
+                    elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
+                    elem += ''+ events[i].text_presentation +'</p>'
+                    elem +='<a href="event.html?id='+ events[i].id+'" type="button" class="btn btn-light">Read More</a>';
+                    elem +='</div>';
+                    elem += '</div>';
+                    elem += '</div>';
+                    elem +='</div>';
+                    $("#carousel-events").append(elem);
+                }
         }
     });
 
