@@ -82,3 +82,14 @@
   transform: translate(-50%, -50%);
   padding: 5%;
 }
+.events{
+  display: flex;
+  justify-content: center;
+}
+.projects{
+  display: flex;
+  justify-content: center;
+}
+#partner-section{
+ margin-top: 8%;
+}

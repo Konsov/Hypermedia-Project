@@ -64,7 +64,7 @@ $(window).on("load",function () {
                 if(i == 0){
                     elem +='<p class="project-title">RELATED PROJECTS</p>'
                     elem +='<div class="projects">'
-                    elem +='<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="height: 500px">'
+                    elem +='<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="height: 400px; width: 40vw">'
                     elem +='<ol class="carousel-indicators">'
                     elem +='<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>'
                     elem +='<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>'
@@ -72,7 +72,7 @@ $(window).on("load",function () {
                     elem +='</ol>'
                     elem += '<div id="carousel-projects" class="carousel-inner">'
                     elem +='<div class="carousel-item active">';
-                    elem +='<img src=" ' + photos[0].url + '" style="height: 500px" class="d-block w-100" alt="...">'
+                    elem +='<img src=" ' + photos[0].url + '" style="height: 400px" class="d-block w-100" alt="...">'
                     elem +='<div class="overlay">';
                     elem +='<div style="width: 100%;height: 100%;position: relative;">';
                     elem +='<div class="centro">';
@@ -99,7 +99,7 @@ $(window).on("load",function () {
                 }else{
                     elem = '';
                     elem+='<div class="carousel-item">';
-                    elem+='<img src=" ' + photos[0].url + '" style="height: 500px" class="d-block w-100" alt="...">';
+                    elem+='<img src=" ' + photos[0].url + '" style="height: 400px" class="d-block w-100" alt="...">';
                     elem+='<div class="overlay">'
                     elem+='<div style="width: 100%;height: 100%;position: relative;">';
                     elem+='<div class="centro">';
@@ -128,16 +128,16 @@ $(window).on("load",function () {
                 if(i == 0){
                     elem +='<p class="project-title">RELATED EVENTS</p>'
                     elem +='<div class="events">'
-                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" style="height: 500px">'
+                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" style="height: 400px; width: 40vw">'
                     elem +='<ol class="carousel-indicators">'
-                    elem +='<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>'
-                    elem +='<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>'
-                    elem += '<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>'
+                    elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>'
+                    elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>'
+                    elem += '<li data-target="#carouselExampleCaptions2" data-slide-to="2"></li>'
                     elem +='</ol>'
                     elem += '<div id="carousel-events" class="carousel-inner">'
 
                     elem +='<div class="carousel-item active">';
-                    elem +='<img src=" ' + events[i].image + '" style="height: 500px" class="d-block w-100" alt="...">'
+                    elem +='<img src=" ' + events[i].image + '" style="height: 400px" class="d-block w-100" alt="...">'
                     elem +='<div class="overlay">';
                     elem +='<div style="width: 100%;height: 100%;position: relative;">';
                     elem +='<div class="centro">';
@@ -164,7 +164,7 @@ $(window).on("load",function () {
                 }else{
                     elem = '';
                     elem+='<div class="carousel-item">';
-                    elem+='<img src=" ' + events[i].image + '" style="height: 500px" class="d-block w-100" alt="...">';
+                    elem+='<img src=" ' + events[i].image + '" style="height: 400px" class="d-block w-100" alt="...">';
                     elem+='<div class="overlay">'
                     elem+='<div style="width: 100%;height: 100%;position: relative;">';
                     elem+='<div class="centro">';
