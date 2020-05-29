@@ -1,43 +1,40 @@
 $(window).on("load",function () {
 
     $.getJSON('/api/service', function (service) { 
-        
-        // GET BOOK BY ID /api/book/{bookId}
         for (let i = 0; i < service.length; i++) {
             var id = service[i].id;
             var name = service[i].name;
             var description = service[i].description;
-            var elem= '';             
-            elem += '<div class="col-lg-12">'
+            var elem= '';
             elem += '<div class="row">'
-            elem += '<div class="col-lg-2"></div>'
-            elem += '<div id="serviceee" class="col-lg-8">'
             elem += '<h3 id="service_name">'+ name +'</h3>'
-            elem += '<div class="col-lg-12">'
-            elem += '<div class="row">'
-            elem += '<div class="col-lg-4">'
-            elem += '<img src="../assets/img/servizio1.jpg" class="img-thumbnail" alt="Association" width="608" height="452"></div>'
-            elem += '<div class="col-lg-8">'
-            elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">'
-            elem += ''+ description +'</p>'
-            elem += '<input type="button" name="theButton" value="Detail" class="btn btn-primary" data-service="'+id+'" />'
             elem += '</div>'
+            elem += '<div id="service" class="col-lg-12">'
+            
+           if(i % 2 == 0){
+                elem += '<div class="row">'
+                elem += '<div id="service-img" class="col-lg-5">'
+                elem += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="Association"></div>'
+                elem += '<div id="text" class="col-lg-7">'
+                elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 5;-webkit-box-orient: vertical;">'
+                elem += ''+ description +'</p>'
+                elem += '<a href="/pages/service.html?id='+ id +'" class="btn btn-dark">Read More</a>'
+                elem += '</div>'
+                elem += '</div>'
+           }else{
+                elem += '<div class="row">'
+                elem += '<div id="text" class="col-lg-7">'
+                elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 5;-webkit-box-orient: vertical;">'
+                elem += ''+ description +'</p>'
+                elem += '<a href="/pages/service.html?id='+ id +'" class="btn btn-dark">Read More</a>'
+                elem += '</div>'
+                elem += '<div id="service-img" class="col-lg-5 order-first order-lg-last">'
+                elem += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="Association"></div>'
+                elem += '</div>'
+           }
             elem += '</div>'
-            elem += '</div>'
-            elem += '</div>'
-            elem += '</div>'
-            elem += '</div>'
-            $('#service_array').append(elem);
-
+            
+            $('#service-container').append(elem);
         }
     });
 });
-
-
-$(document).on("click", ".btn", function() {
-
-    var name = $(this).data('service');        
-    if (name) {
-        window.location = `/pages/singleService.html?id=${name}`;
-    }
-})
