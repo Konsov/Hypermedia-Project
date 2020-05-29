@@ -1,0 +1,43 @@
+#service{
+    border-radius: 5px;
+    border-style: double;
+    border-color: grey;
+    padding: 2%;
+}
+#service_name{
+    margin-top: 8%;
+}
+#text{
+    margin-top: 3%;
+    text-align: justify;
+}
+
+.first_text{
+    text-align: center;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.serviziointro{
+    opacity: 0.9;
+    width: 100%;
+    height: 10vw;
+    background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url('../img/tramonto2-w.jpg');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center;
+    position: relative;
+  }
+
+ .slogan{
+    color: white;
+    font-size:5vw;
+}
