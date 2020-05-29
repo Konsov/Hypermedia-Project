@@ -174,3 +174,81 @@
   transform: translate(-50%, -50%);
   padding: 5%;
 }
+
+* {font-family: "Work Sans", sans-serif;}
+
+.box-b,
+.box-e {
+  position: relative;
+}
+
+
+ .box-b a {color:rgba(255, 255, 255, 0.979)}
+ .box-e a {color:rgba(255, 255, 255, 0.596)}
+
+
+/*------------------------------------*/
+/*------ Basic Underline Styles ------*/
+/*------------------------------------*/
+
+.normal-underline,
+.custom-underline {
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+}
+
+.normal-underline,
+.normal-underline:hover {
+  color: #444;
+  text-decoration: underline;
+}
+
+.custom-underline,
+.custom-underline:hover,
+.custom-underline:focus,
+.custom-underline:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.custom-underline::after {
+  content: "";
+  position: absolute;
+}
+
+/*------------------------------------*/
+/*--- Individual Custom Underlines ---*/
+/*------------------------------------*/
+
+/*--- Blue Box (box-b) ---*/
+
+/*--- Green Box (box-c) ---*/
+
+
+
+
+
+/*--- Red Box (box-e) ---*/
+.box-e .custom-underline::after {
+  top: 75%;
+  height: 2px;
+  width: 0%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.596);
+    transition: 0.5s ease all .3s;
+}
+
+.box-e:hover .custom-underline::after {
+  width: 90%;
+    transition: 0.2s ease all;
+}
+
+.box-b .custom-underline::after {
+  top: 75%;
+  height: 2px;
+  width: 90%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.952);
+}

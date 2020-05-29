@@ -120,7 +120,7 @@
   width:44px;
   height:44px;
   text-align:center;
-  margin-right:8px;
+  
   border-radius:100%;
   -webkit-transition:all .2s linear;
   -o-transition:all .2s linear;
@@ -137,6 +137,10 @@
   height:34px;
   width:34px;
   font-size:14px
+}
+.social-icons a.mail
+{
+  background-color:#d1cfcfc2
 }
 .social-icons a.facebook:hover
 {
@@ -264,6 +268,27 @@ margin-left:5vw;
   position: relative;
 }
 
+.header_team {
+  width: 100%;
+  height: 20vw; 
+  margin-top: -3vw;  
+  background-image: url('../img/gruppo.jpg');
+  background-size:     cover;                    
+  background-repeat:   no-repeat; 
+  position: relative;
+}
+
+.header_team #p1 {
+  font-size: 3vw; 
+  font-weight:bold;
+  color: white; 
+  position: absolute; 
+  margin-top: 10vw; 
+  text-transform: uppercase; 
+  left:41vw
+}
+
+
 .header #p1 {
   font-size: 3vw; 
   font-weight:bold;
@@ -354,11 +379,49 @@ margin-left:5vw;
   left:30vw
 }
 
+.array_person {
+  margin-top: 30px; 
+  margin-right: 6vw;
+  width: 15vw;
+}
+
+.array_person a img {
+  width: 17vw;
+  height: 17vw;
+}
+.array_person p {
+  text-align: center; 
+  width: 17vw; 
+}
+
+.array_person #profession {
+  margin-top: -17px;
+}
+
+.array_person #name {
+  font-weight: bold;
+  margin-top: 10px
+}
+
 @media (max-width:767px){
   .header_services #p1 {
     font-size: 6vw;
     margin-top: 35vw;
     left:26vw
+  }
+
+  .array_person {
+    margin-top: 30px; 
+    margin-right: 6vw;
+    width: 100vw;
+  }
+  .array_person p {
+    width: 60vw;
+  }
+
+  .array_person a img {
+    width: 60vw;
+    height: 60vw;
   }
 
   .header_contact #p1 {
@@ -367,16 +430,18 @@ margin-left:5vw;
     left:26vw
   }
 
+
   .header_donate #p1 {
     font-size: 6vw;
     margin-top: 35vw;
     left:26vw
   }
 
+  .header_team #p1,
   .header #p1 {
-    font-size: 6vw;
+    font-size: 7vw;
     margin-top: 20vw;
-    left:26vw
+    left:28vw
   }
 
   .header_services {
@@ -392,6 +457,7 @@ margin-left:5vw;
     height: 60vw;
   }
 
+  .header_team,
   .header{
     width: 100vw;
     height: 50vw;
@@ -406,3 +472,139 @@ margin-left:5vw;
   }
 }
 .owl-prev i, .owl-next i {transform : scale(1,6); color: white;}
+
+.box-b,
+.box-e {
+  position: relative;
+}
+
+/*------------------------------------*/
+/*------ Basic Underline Styles ------*/
+/*------------------------------------*/
+
+.normal-underline,
+.custom-underline {
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+}
+
+.normal-underline,
+.normal-underline:hover {
+  color: #444;
+  text-decoration: underline;
+}
+
+.box-c.custom-underline,
+.box-c.custom-underline:hover,
+.box-c .custom-underline:focus,
+.box-c.custom-underline:active {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.custom-underline::after {
+  content: "";
+  position: absolute;
+}
+
+/*------------------------------------*/
+/*--- Individual Custom Underlines ---*/
+/*------------------------------------*/
+
+/*--- Blue Box (box-b) ---*/
+
+/*--- Green Box (box-c) ---*/
+
+
+
+
+
+/*--- Red Box (box-e) ---*/
+
+
+.box-c .custom-underline::after {
+  top: 95%;
+  height: 2.5px;
+  width: 90%;
+  left: 5%;
+  background-color: rgba(0, 0, 0, 0.952);
+}
+
+.box-b,
+.box-c,
+.box-e {
+  position: relative;
+}
+
+
+ .box-b a {color:rgba(255, 255, 255, 0.979)}
+ .box-e a {color:rgba(255, 255, 255, 0.596)}
+
+
+/*------------------------------------*/
+/*------ Basic Underline Styles ------*/
+/*------------------------------------*/
+
+.normal-underline,
+.custom-underline {
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+}
+
+.normal-underline,
+.normal-underline:hover {
+  color: #444;
+  text-decoration: underline;
+}
+
+.box-b .custom-underline,
+.box-b .custom-underline:hover,
+.box-b .custom-underline:focus,
+.box-b .custom-underline:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.custom-underline::after {
+  content: "";
+  position: absolute;
+}
+
+/*------------------------------------*/
+/*--- Individual Custom Underlines ---*/
+/*------------------------------------*/
+
+/*--- Blue Box (box-b) ---*/
+
+/*--- Green Box (box-c) ---*/
+
+
+
+
+
+/*--- Red Box (box-e) ---*/
+.box-e .custom-underline::after {
+  top: 75%;
+  height: 2px;
+  width: 0%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.596);
+    transition: 0.5s ease all .3s;
+}
+
+.box-e:hover .custom-underline::after {
+  width: 90%;
+    transition: 0.2s ease all;
+}
+
+.box-b .custom-underline::after {
+  top: 75%;
+  height: 2px;
+  width: 75%;
+  left: 15%;
+  background-color: rgba(255, 255, 255, 0.952);
+}

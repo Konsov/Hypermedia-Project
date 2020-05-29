@@ -38,6 +38,6 @@ $(document).on("click", ".btn", function() {
 
     var name = $(this).data('service');        
     if (name) {
-        window.location = `/pages/singleService.html?id=${name}`;
+        window.location = `/pages/service.html?id=${name}`;
     }
 })
