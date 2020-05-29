@@ -11,6 +11,18 @@
     background-repeat:   no-repeat; 
     position: relative;
   }
+  @media (max-width:767px){
+    .intro {
+      height: 80vw;
+    }
+    .intro .slogan {
+      font-size: 8vw;
+    }
+
+    .intro .baseline {
+      font-size: 4vw;
+    }
+  }
 
 .first_text{
     width: 60%;
