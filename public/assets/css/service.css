@@ -90,6 +90,20 @@
   display: flex;
   justify-content: center;
 }
-#partner-section{
- margin-top: 8%;
+
+#carouselExampleCaptions2{
+  width: 40vw;
+}
+@media(max-width: 1100px){
+  #carouselExampleCaptions2{
+    width: 80vw;
+  }
+}
+#carouselExampleCaptions{
+  width: 40vw;
+}
+@media(max-width: 1100px){
+  #carouselExampleCaptions{
+    width: 80vw;
+  }
 }

@@ -64,7 +64,7 @@ $(window).on("load",function () {
                 if(i == 0){
                     elem +='<p class="project-title">RELATED PROJECTS</p>'
                     elem +='<div class="projects">'
-                    elem +='<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="height: 400px; width: 40vw">'
+                    elem +='<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="height: 400px;">'
                     elem +='<ol class="carousel-indicators">'
                     elem +='<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>'
                     elem +='<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>'
@@ -128,7 +128,7 @@ $(window).on("load",function () {
                 if(i == 0){
                     elem +='<p class="project-title">RELATED EVENTS</p>'
                     elem +='<div class="events">'
-                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" style="height: 400px; width: 40vw">'
+                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" style="height: 400px;">'
                     elem +='<ol class="carousel-indicators">'
                     elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>'
                     elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>'
