@@ -6,7 +6,6 @@ var Person = require('../service/PersonService');
 module.exports.personGET = function personGET (req, res, next, bodyLimit, pageLimit) {
   Person.personGET(bodyLimit, pageLimit)
     .then(function (response) {
-      console.log(response)
       utils.writeJson(res, response);
     })
     .catch(function (response) {
@@ -15,7 +14,8 @@ module.exports.personGET = function personGET (req, res, next, bodyLimit, pageLi
 };
 
 module.exports.personIdEventGET = function personIdEventGET (req, res, next, id) {
-  Person.personIdEventGET(id)
+  
+  Person.personIdEventGET(req.swagger.params['id'].value)
     .then(function (response) {
       console.log(response.length)
       utils.writeJson(res, response);

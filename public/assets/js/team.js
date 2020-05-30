@@ -8,7 +8,6 @@ $(window).on("load",function () {
             return a.id - b.id;
         });
         
-        console.log(person);
         for (let i = 0; i < person.length; i++) {
 
             
@@ -39,7 +38,6 @@ $(window).on("load",function () {
             elem += '</div>'
             elem += '</div>'
             if (i % 3==0 && i !=0 ){
-                console.log(i)
                 elem += '</div>' 
             }
 

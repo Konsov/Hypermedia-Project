@@ -7,7 +7,9 @@ $(window).on("load",function () {
             var description = service[i].description;
             var elem= '';
             elem += '<div class="row">'
-            elem += '<h3 id="service_name">'+ name +'</h3>'
+            elem += '<div class="box-c">'            
+            elem += '<h3 class="custom-underline" id="service_name">'+ name +'</h3>'
+            elem += '</div>'
             elem += '</div>'
             elem += '<div id="service" class="col-lg-12">'
             
