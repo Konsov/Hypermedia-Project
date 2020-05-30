@@ -6,9 +6,9 @@ $(window).on("load",function () {
             var name = service[i].name;
             var description = service[i].description;
             var elem= '';
-            elem += '<div class="row">'
+            
             elem += '<h3 id="service_name">'+ name +'</h3>'
-            elem += '</div>'
+
             elem += '<div id="service" class="col-lg-12">'
             
            if(i % 2 == 0){
@@ -30,6 +30,7 @@ $(window).on("load",function () {
                 elem += '</div>'
                 elem += '<div id="service-img" class="col-lg-5 order-first order-lg-last">'
                 elem += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="Association"></div>'
+                elem += '</div>'
                 elem += '</div>'
            }
             elem += '</div>'
