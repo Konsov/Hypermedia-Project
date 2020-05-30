@@ -33,6 +33,7 @@ $(window).on("load",function () {
                 elem += '<div id="service-img" class="col-lg-5 order-first order-lg-last">'
                 elem += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="Association"></div>'
                 elem += '</div>'
+                elem += '</div>'
            }
             elem += '</div>'
             

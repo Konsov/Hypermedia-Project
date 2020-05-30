@@ -10,8 +10,6 @@ $(window).on("load",function () {
         
         for (let i = 0; i < person.length; i++) {
 
-            
-
             var id = person[i].id;
             var name = person[i].name;
             var role = person[i].role;
@@ -37,6 +35,7 @@ $(window).on("load",function () {
             elem += '</ul>'
             elem += '</div>'
             elem += '</div>'
+            
             if (i % 3==0 && i !=0 ){
                 elem += '</div>' 
             }
