@@ -54,6 +54,20 @@ exports.eventIdGET = function(id) {
   });
 }
 
+exports.eventGroupGET = function(month,year) {
+  return new Promise(function(resolve, reject) {
+    sqlDb.raw(`SELECT id, name, contact,text_presentation,starting_date,ending_date,image from event
+    WHERE EXTRACT(MONTH FROM starting_date) = ? AND EXTRACT(YEAR FROM ending_date) = ?`, [month,year])
+    .then(response => {
+      resolve(response);
+    })
+    .catch(err => {
+      console.error(err);
+      reject(err);
+    });
+  });
+}
+
 
 /**
  * Obtain information about event in which one person is the main contact

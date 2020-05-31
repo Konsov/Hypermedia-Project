@@ -12,7 +12,7 @@ info:
   license:
     name: "Eco Vibes License"
     url: "http://license.foo.com"
-host: hypproject1920.herokuapp.com
+host: localhost:5000
 basePath: /api
 tags:
 - name: "person"
@@ -24,7 +24,7 @@ tags:
 - name: "project"
   description: "Everything about project"
 schemes:
-- "https"
+- "http"
 paths:
   /person:
     get:
@@ -160,6 +160,35 @@ paths:
         404:
           description: "Event not found"
       x-swagger-router-controller: "Event"
+  /event/month:
+    get:
+      tags:
+      - "event"
+      description: "Obtain information about specific event"
+      operationId: "eventGroupGET"
+      parameters:
+      - name: "month"
+        in: "query"
+        description: "The month of the event group"
+        required: true
+        type: "integer"
+      - name: "year"
+        in: "query"
+        description: "The year of the event group"
+        required: true
+        type: "integer"  
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "array"
+            items:
+              type: "object"
+              allOf:
+                - $ref: "#/definitions/Event"
+        404:
+          description: "Event not found"
+      x-swagger-router-controller: "Event"    
   /event/{id}/service:
     get:
       tags:
