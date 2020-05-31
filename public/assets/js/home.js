@@ -26,7 +26,7 @@ $(window).on("load",function () {
                         elem +='<p style="color: white; font-size: large; font-weight:bold">' + projects[i].name +'</p>';
                         elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
                         elem += ''+ projects[i].description +'</p>'
-                        elem +='<a href="project.html?id='+projects[i].id+'" type="button" class="btn btn-light">Read More</a>';
+                        elem +='<a href="/pages/project.html?id='+projects[i].id+'" type="button" class="btn btn-light">Read More</a>';
                         elem +='</div>';
                         elem +='</div>';
                         elem +='</div>';
@@ -54,7 +54,7 @@ $(window).on("load",function () {
                         elem+='<p style="color: white; font-size: large; font-weight:bold">' + projects[i].name  +  '</p>';
                         elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
                         elem += ''+ projects[i].description +'</p>'
-                        elem +='<a href="project.html?id='+projects[i].id+'" type="button" class="btn btn-light">Read More</a>';
+                        elem +='<a href="/pages/project.html?id='+projects[i].id+'" type="button" class="btn btn-light">Read More</a>';
                         elem +='</div>';
                         elem += '</div>';
                         elem += '</div>';
