@@ -33,9 +33,27 @@ $(window).on("load",function () {
         elem +='<strong>When?</strong>';
         
         if(project[0].starting_date == project[0].ending_date){
-            elem +='<br>' + project[0].starting_date + '<br>';
+            var timeStr = project[0].ending_date;
+            var date = new Date(timeStr);
+            var day = date.getDate();
+            var year = date.getFullYear();
+            var month = date.getMonth()+1;
+            var dateStr = day+"/"+month+"/"+year;
+            elem +='<br>' + dateStr + '<br>';
         }else{
-            elem +='<br> From ' + project[0].starting_date + ' to' + project[0].ending_date + '<br>';
+            var timeStr = project[0].ending_date;
+            var date = new Date(timeStr);
+            var day = date.getDate();
+            var year = date.getFullYear();
+            var month = date.getMonth()+1;
+            var dateStr1 = day+"/"+month+"/"+year;
+            var timeStr = project[0].starting_date;
+            var date = new Date(timeStr);
+            var day = date.getDate();
+            var year = date.getFullYear();
+            var month = date.getMonth()+1;
+            var dateStr2 = day+"/"+month+"/"+year;
+            elem +='<br> From ' + dateStr2 + ' to ' + dateStr1 + '<br>';
         }
         
         elem +='<strong>Descritpion of The Service</strong>';
