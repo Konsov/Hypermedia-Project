@@ -192,10 +192,6 @@
     text-decoration: underline ;
 }
 
-#person_img{
-  margin-top:2vw;
-  margin-left:10vw;
-}
 
 #person_data{
   
@@ -205,7 +201,6 @@
 #service_name{
   margin-top:2vw;
   margin-left:2vw;
-  text-decoration: underline ;
 }
 
 #service_img{
@@ -259,51 +254,64 @@ margin-left:5vw;
 
 
 .header {
+  opacity: 0.9;
   width: 100%;
   height: 20vw; 
-  margin-top: -3vw;  
-  background-image: url('../img/Panoramica-4-web3.jpg');
+  margin-top: -3vw;
+  background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url('../img/Panoramica-4-web3.jpg');   
   background-size:     cover;                    
   background-repeat:   no-repeat; 
   position: relative;
 }
 
 .header_team {
+  opacity: 0.9;
   width: 100%;
   height: 20vw; 
-  margin-top: -3vw;  
-  background-image: url('../img/gruppo.jpg');
+  margin-top: -3vw;
+  background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url('../img/gruppo.jpg');  
   background-size:     cover;                    
   background-repeat:   no-repeat; 
   position: relative;
 }
 
 .header_team #p1 {
-  font-size: 3vw; 
+  font-size: 5vw; 
   font-weight:bold;
   color: white; 
   position: absolute; 
-  margin-top: 10vw; 
-  text-transform: uppercase; 
-  left:41vw
+  margin-top: 7vw; 
+  left:36vw
 }
 
 
 .header #p1 {
-  font-size: 3vw; 
+  font-size: 5vw; 
   font-weight:bold;
   color: white; 
   position: absolute; 
-  margin-top: 10vw; 
-  text-transform: uppercase; 
-  left:37vw
+  margin-top: 8vw; 
+  left:34vw
 }
 
 .header_contact{
+  opacity: 0.9;
   width: 100%;
   height: 20vw; 
   margin-top: -3vw;  
-  background-image: url('../img/computer-1.jpg');
+  background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url('../img/computer-1.jpg');  
   background-size:     cover;                    
   background-repeat:   no-repeat; 
   position: relative;
@@ -311,13 +319,12 @@ margin-left:5vw;
 
 
 .header_contact #p1 {
-  font-size: 3vw; 
+  font-size: 4vw; 
   font-weight:bold;
   color: white; 
   position: absolute; 
-  margin-top: 10vw; 
-  text-transform: uppercase; 
-  left:37vw
+  margin-top: 8vw; 
+  left:34vw
 }
 
 .header_contact #p2 {
@@ -330,33 +337,42 @@ margin-left:5vw;
 }
 
 .header_services {
+  opacity: 0.9;
   width: 100%;
   height: 40vw;
   margin-top: -22vw;
-  background-image: url('../img/tramonto2-w.jpg');
+  background-image:  linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
+  ),
+  url('../img/tramonto2-w.jpg');  
   background-size:     cover;                    
   background-repeat:   no-repeat; 
   position: relative;
 }
 
 .header_donate {
+  opacity: 0.9;
   width: 100%;
   height: 40vw;
   margin-top: -20vw;
-  background-image: url('../img/digaw-1.jpg');
+  background-image:  linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
+  ),
+  url('../img/digaw-1.jpg');  
   background-size:     cover;                    
   background-repeat:   no-repeat; 
   position: relative;
 }
 
 .header_donate #p1 {
-  font-size: 3vw; 
+  font-size: 5vw; 
   font-weight:bold;
   color: white; 
   position: absolute; 
-  margin-top: 28vw; 
-  text-transform: uppercase; 
-  left:37vw
+  margin-top: 26vw; 
+  left:32vw
 }
 
 
@@ -365,8 +381,7 @@ margin-left:5vw;
   font-weight:bold;
   color: white; 
   position: absolute; 
-  margin-top: 28vw; 
-  text-transform: uppercase; 
+  margin-top: 28vw;  
   left:37vw
 }
 
@@ -389,6 +404,13 @@ margin-left:5vw;
   width: 17vw;
   height: 17vw;
 }
+
+#person_img {
+  width: 17vw;
+  height: 17vw; 
+  margin-top:2vw;
+  margin-left:10vw;
+}
 .array_person p {
   text-align: center; 
   width: 17vw; 
@@ -402,6 +424,27 @@ margin-left:5vw;
   font-weight: bold;
   margin-top: 10px
 }
+
+#info_person {
+  margin-top: 2vw;
+}
+
+@media (max-width:991px){
+
+  #info_person {
+    margin-left: 5vw;
+  }
+
+  
+  #person_img {
+    width: 60vw;
+    height: 60vw; 
+    margin-top:2vw;
+    margin-left:10vw;
+  }
+
+}
+
 
 @media (max-width:767px){
   .header_services #p1 {
@@ -425,23 +468,30 @@ margin-left:5vw;
   }
 
   .header_contact #p1 {
-    font-size: 6vw;
+    font-size: 8vw;
     margin-top: 15vw;
-    left:26vw
+    left:24vw
   }
 
+
+  
 
   .header_donate #p1 {
-    font-size: 6vw;
+    font-size: 8vw;
     margin-top: 35vw;
-    left:26vw
+    left:24vw
   }
 
-  .header_team #p1,
-  .header #p1 {
-    font-size: 7vw;
+  .header_team #p1 {
+    font-size: 9vw;
     margin-top: 20vw;
     left:28vw
+  }
+
+  .header #p1 {
+    font-size: 10vw;
+    margin-top: 20vw;
+    left:20vw
   }
 
   .header_services {
@@ -525,10 +575,10 @@ margin-left:5vw;
 
 
 .box-c .custom-underline::after {
-  top: 95%;
+  top: 96%;
   height: 2.5px;
-  width: 90%;
-  left: 5%;
+  width: 100%;
+  left: 0%;
   background-color: rgba(0, 0, 0, 0.952);
 }
 
@@ -604,7 +654,11 @@ margin-left:5vw;
 .box-b .custom-underline::after {
   top: 75%;
   height: 2px;
-  width: 75%;
-  left: 15%;
+  width: 80%;
+  left: 10%;
   background-color: rgba(255, 255, 255, 0.952);
+}
+
+.nav-link {
+  display: inline-block !important;
 }

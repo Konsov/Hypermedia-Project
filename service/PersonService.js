@@ -100,6 +100,7 @@ exports.personIdEventGET = function(id) {
  **/
 exports.personIdGET = function(id) {
   return new Promise(function(resolve, reject) {
+    
     sqlDb.select('id','name','age','role','profession','short_description','email','image')
     .from('person')
     .where('id',id)

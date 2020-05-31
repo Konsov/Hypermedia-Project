@@ -36,6 +36,19 @@ module.exports.eventIdPersonGET = function eventIdPersonGET (req, res, next) {
     });
 };
 
+module.exports.eventGroupGET = function eventGroupGET (req, res, next) {
+  var month = req.swagger.params['month'].value;
+  var year = req.swagger.params['year'].value;
+  Event.eventGroupGET(month,year)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
+
 module.exports.eventIdServiceGET = function eventIdServiceGET (req, res, next) {
   var id = req.swagger.params['id'].value;
   Event.eventIdServiceGET(id)
