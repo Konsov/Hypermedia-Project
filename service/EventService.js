@@ -59,7 +59,7 @@ exports.eventGroupGET = function(month,year) {
     sqlDb.raw(`SELECT id, name, contact,text_presentation,starting_date,ending_date,image from event
     WHERE EXTRACT(MONTH FROM starting_date) = ? AND EXTRACT(YEAR FROM ending_date) = ?`, [month,year])
     .then(response => {
-      resolve(response);
+      resolve(response.rows);
     })
     .catch(err => {
       console.error(err);
