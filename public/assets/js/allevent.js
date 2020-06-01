@@ -61,10 +61,10 @@ function setDate(m,y){
             elem += '<div class="col-md-1"></div>'
         }    
         
-        elem += '<div class="array_person"  align="center" style="transform: rotate(0);">'
-        elem += '<div class="column" >'
-        elem += '<a class="stretched-link" href="/pages/eventmonth.html?month='+(m+j)+'&year='+y+'">'
-        elem += '<img src="'+ img[i] +'" "alt="personeImage" style="filter: brightness(70%); saturate(140%)">'        
+        elem += '<div class="array_person"  align="center">'
+        elem += '<div class="column" style="transform: rotate(0);">'
+        elem += '<a class="stretched-link" href="/pages/eventmonth.html?month='+(m+1+j)+'&year='+y+'">'
+        elem += '<img src="'+ img[i] +'" "alt="personeImage" style="filter: brightness(60%); saturate(140%)">'        
         elem += '</a>'
         elem += '<p id="month">'+ month[(m+j)] +'</p>'
         elem += '<p id="year">'+ y +'</p>'

@@ -54,6 +54,42 @@ exports.eventIdGET = function(id) {
   });
 }
 
+exports.eventIdNextGET = function(id) {
+  return new Promise(function(resolve, reject) {
+    var subquery = sqlDb.select('starting_date').from('event').where('id',id)
+    sqlDb.select('id','name','contact','text_presentation','starting_date','ending_date','image')
+    .from('event')
+    .where('starting_date','>',subquery)
+    .limit(1)
+    .orderBy('starting_date','asc')
+    .then(response => {
+      resolve(response);
+    })
+    .catch(err => {
+      console.error(err);
+      reject(err);
+    });
+  });
+}
+
+exports.eventIdPrevGET = function(id) {
+  return new Promise(function(resolve, reject) {
+    var subquery = sqlDb.select('starting_date').from('event').where('id',id)
+    sqlDb.select('id','name','contact','text_presentation','starting_date','ending_date','image')
+    .from('event')
+    .where('starting_date','<',subquery)
+    .orderBy('starting_date','desc')
+    .limit(1)
+    .then(response => {
+      resolve(response);
+    })
+    .catch(err => {
+      console.error(err);
+      reject(err);
+    });
+  });
+}
+
 exports.eventGroupGET = function(month,year) {
   return new Promise(function(resolve, reject) {
     sqlDb.raw(`SELECT id, name, contact,text_presentation,starting_date,ending_date,image from event
