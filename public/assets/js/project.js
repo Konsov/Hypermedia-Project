@@ -25,7 +25,6 @@ $(window).on("load",function () {
         var description = project[0].description;
 
         elem = '<p class="service-paragraph">';
-        elem +='<img src="../assets/img/servizio1.jpg" class="service-img" alt="service-img">';
         elem +='<strong>Name</strong>';
         elem +='<br>' + name + '<br>';
         elem +='<strong>Status</strong>';
@@ -65,6 +64,33 @@ $(window).on("load",function () {
         $(".first_text").append(title);
         $(".service-info").append(elem);
     });
+
+    $.getJSON('/api/project/'+ id + '/photo', function (photos) { 
+        var img = '';
+        console.log(photos)
+        img +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><img src="'+ photos[0].url +'" class="service-img" alt="service-img"></div>';
+        $(".service-info").prepend(img);
+
+       
+        var carouselGallery =  '<div class="carousel-inner">';
+        for(let i=0; i<photos.length;i++){
+        console.log( photos[i].url )
+
+            if(i == 0){
+                carouselGallery +='<div class="carousel-item active">';
+            }else{
+                carouselGallery += '<div class="carousel-item">';
+            }
+            carouselGallery +='<img class="d-block w-100" src="'+ photos[i].url +'">';
+            carouselGallery +='</div>';
+           
+        }
+        carouselGallery +='</div>';
+        $("#carouselPhotogallery").append(carouselGallery);
+
+
+    });
+   
     
     $.getJSON('/api/project/'+ id + '/service', function (service) { 
 
