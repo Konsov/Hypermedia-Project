@@ -14,6 +14,12 @@
     position: relative;
   }
 
+.ui-datepicker-calendar {
+  display: none;
+  }
+#startDate{
+  margin-left: 2vw;
+}
 .slogan{
     color: white;
     font-size:5vw;

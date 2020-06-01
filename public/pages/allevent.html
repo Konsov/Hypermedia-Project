@@ -17,8 +17,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
     <script src="../assets/owlcarousel/owl.carousel.js"></script>
-    <script src="../assets/js/project.js"></script>
+    <script src="../assets/js/allevent.js"></script>
 </head>
 <body>
 
@@ -83,32 +84,34 @@
 
     <div class="serviziointro">
         <div class="first_text">
+            <strong class="slogan">Event by month</strong> 
         </div>
     </div>
 <!------------------------------------------------------- IMAGE INTRO -------------------------------------------------------------------->
 
     <div class="container">
-        <div class="service-info">
-        </div>
+        
+        
 
-        <div class="referance">
-            <p class="service-paragraph"><strong>Referance for this Service</strong></p>
-            
-            <div class="row" id="person-involved">
-               
-            </div>
-        </div>    
+        <div class="box-c">
+            <h3 class="custom-underline" id="service_name"><strong>Choose the month</strong></h3>
+        </div>
+        <input name="startDate" id="startDate" class="date-picker" autocomplete="off" />
+
+        <div id="months_event"></div>
+        
+        
+
+        <div class="carousel-events"></div>
     
         <!------------------------------------------------------- PROJECT RELATED -------------------------------------------------------------------->
  
-        <div class="container-projects">
-        </div>
+        
         
         
         <!------------------------------------------------------- EVENT RELATED -------------------------------------------------------------------->
 
-         <div class="container-events">
-        </div>
+         
     </div>
 
 
@@ -184,8 +187,7 @@
         </section>
     </div>
 
-    <label for="startDate">Date :</label>
-    <input name="startDate" id="startDate" class="date-picker" autocomplete="off" />
+    
 
     <!------------------------------------------------------- FOOTER -------------------------------------------------------------------->
 
