@@ -33,7 +33,8 @@ $(window).on("load",function () {
         var profession = person.profession;
         var short_description = person.short_description;
         console.log(person['name'])
-        $("#person_name").html(name);
+        var k= '<p id="p1">'+name+'</p>'
+        $(".header").append(k);
         $("#person_age").html(age);
         $("#person_role").html(role);
         $("#person_email").html(email);
