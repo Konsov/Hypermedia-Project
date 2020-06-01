@@ -48,6 +48,8 @@
   float: left;
   clear: both;
   margin-right: 2%;
+  width: 100%;
+  height: auto;
 }
 
 .service-paragraph{

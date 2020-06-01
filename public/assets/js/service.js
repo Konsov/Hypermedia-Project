@@ -22,7 +22,7 @@ $(window).on("load",function () {
         var name = service.name;
         var description = service.description;
 
-        elem = '<p class="service-paragraph"><img src="../assets/img/servizio1.jpg" class="service-img" alt="service-img"><strong>Descritpion of The Service</strong><br>' + description + '</p>';
+        elem = '<p class="service-paragraph"><strong>Descritpion of The Service</strong><br>' + description + '</p>';
     
         title = '<strong class="slogan">' + name + '<br></strong>'
 
@@ -30,6 +30,14 @@ $(window).on("load",function () {
         $(".first_text").append(title);
         $(".service-info").append(elem);
     });
+
+    $.getJSON('/api/service/'+ id + '/photo', function (photos) { 
+        var img = '';
+        console.log(photos[0].url)
+        img +='<div class="col-lg-6" id="divimg"><img src="'+ photos[0].url +'" class="service-img" alt="service-img"></div>';
+        $(".service-info").prepend(img);
+    });
+   
     
     $.getJSON('/api/service/'+ id + '/person', function (person) { 
 
