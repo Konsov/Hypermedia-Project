@@ -124,8 +124,8 @@ exports.personIdGET = function(id) {
 exports.personIdServiceGET = function(id) {
   return new Promise(function(resolve, reject) {
     var subquery_1 = sqlDb.select('id').from('person').where('id',id);
-    var subquery_2 = sqlDb.select('id_service').from('person_involved').where('id_person',subquery_1);
-    sqlDb.select('id','name','description').from('service').where('id',subquery_2)
+    var subquery_2 = sqlDb.select('id_service').from('person_involved').where('id_person','in',subquery_1);
+    sqlDb.select('id','name','description').from('service').where('id','in',subquery_2)
     .then(response => {
       resolve(response);
     })
