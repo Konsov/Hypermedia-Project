@@ -418,11 +418,19 @@ margin-left:5vw;
   margin-top: 30px; 
   flex:auto;
   width: 15vw;
+  
 }
 
 .array_person a img {
   width: 17vw;
   height: 17vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 white;
+}
+
+.array_person a img:hover {
+  width: 17vw;
+  height: 17vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #person_img {

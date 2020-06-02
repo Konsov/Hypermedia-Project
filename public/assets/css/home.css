@@ -22,6 +22,10 @@
     .intro .baseline {
       font-size: 4vw;
     }
+
+    .carousel-item {
+      width:90vw
+    }
   }
 
   

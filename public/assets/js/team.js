@@ -18,11 +18,10 @@ $(window).on("load",function () {
             var email = person[i].email;
 
             if (i % 4 == 0){
-                elem += '<div class="row">'
-                elem += '<div class="col-md-1"></div>'
+                elem += '<div class="row align-items-center">'
             }       
             
-            elem += '<div class="array_person" style="" align="center">'
+            elem += '<div class="array_person align-self-start" align="center">'
             elem += '<div class="column" >'
             elem += '<a href="/pages/singlePerson.html?id='+id+'">'
             elem += '<img src="'+ image +'" "alt="personeImage">'

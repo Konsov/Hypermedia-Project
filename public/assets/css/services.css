@@ -1,6 +1,6 @@
 #service{
     border-radius: 5px;
-    border-style: double;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-color: grey;
     padding: 2%;
     background-color: white;
@@ -32,7 +32,7 @@
         rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.4)
       ),
-      url('../img/tramonto2-w.jpg');
+      url('../img/computer-7.jpg');
     background-size:     cover;                    
     background-repeat:   no-repeat;
     background-position: center;
