@@ -57,8 +57,7 @@ function setDate(m,y){
         }
 
         if (i % 3 == 0){
-            elem += '<div class="row">'
-            elem += '<div class="col-md-1"></div>'
+            elem += '<div class="row align-items-center">'
         }    
         
         elem += '<div class="array_person"  align="center">'
