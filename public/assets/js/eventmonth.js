@@ -49,8 +49,7 @@ $(window).on("load",function () {
             var dateStr1 = day+"/"+month+"/"+year;
 
             if (i % 2 == 0){
-                elem += '<div class="row">'
-                elem += '<div class="col-md-1"></div>'
+                elem += '<div class="row align-items-center">'
             }       
             
             elem += '<div class="array_person" style="" align="center">'
