@@ -14,7 +14,7 @@ module.exports.personGET = function personGET (req, res, next, bodyLimit, pageLi
 };
 
 module.exports.personIdEventGET = function personIdEventGET (req, res, next, id) {
-  
+  var id = req.swagger.params['id'].value;
   Person.personIdEventGET(req.swagger.params['id'].value)
     .then(function (response) {
       console.log(response.length)
@@ -41,6 +41,7 @@ module.exports.personIdGET = function personIdGET (req, res, next, id) {
 };
 
 module.exports.personIdServiceGET = function personIdServiceGET (req, res, next, id) {
+  var id = req.swagger.params['id'].value;
   Person.personIdServiceGET(id)
     .then(function (response) {
       utils.writeJson(res, response);

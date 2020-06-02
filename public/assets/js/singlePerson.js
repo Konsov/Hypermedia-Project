@@ -33,8 +33,8 @@ $(window).on("load",function () {
         var profession = person.profession;
         var short_description = person.short_description;
         console.log(person['name'])
-        var k= '<p id="p1">'+name+'</p>'
-        $(".header").append(k);
+        title = '<strong class="slogan">' + name + '<br></strong>'
+        $(".first_text").append(title);
         $("#person_age").html(age);
         $("#person_role").html(role);
         $("#person_email").html(email);
@@ -43,6 +43,18 @@ $(window).on("load",function () {
         var img = '<div class="item"><img src="' + image + '" id="person_img" alt=""></div>';
         $("#product-carousel").append(img);
     });
+    $.getJSON('/api/person/'+ id + '/service', function (service) {
+
+        console.log(service)
+        elem = '';
+        elem += '<div class="row">'
+        for (let i = 0; i < service.length; i++) {
+            elem += '<a style="margin-left:15px;" href="service.html?id=' + service[i].id + '">'+ service[i].name + '</a>'; 
+        }
+        elem += '</div>'
+        $("#person_service").append(elem);
+    });
+
     $.getJSON('/api/person/'+ id + '/event', function (events) { 
 
         elem = '';
