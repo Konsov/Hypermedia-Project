@@ -192,6 +192,26 @@
     text-decoration: underline ;
 }
 
+.array_person #month {
+  color:white;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  margin-top: -13vw;
+  
+  
+  font-size: 3vw;
+}
+.array_person #year {
+  color:white;
+  font-size: 3vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  margin-top: -10vw;
+  
+}
+
 
 #person_data{
   
@@ -443,6 +463,7 @@ margin-left:5vw;
     margin-left:10vw;
   }
 
+
 }
 
 
@@ -453,7 +474,24 @@ margin-left:5vw;
     left:26vw
   }
 
+  #months_event {
+    padding-bottom: 5vw;
+  }
+  
+  .array_person #month {
+    font-size: 9vw;
+    position: relative;
+    margin-top: -50vw;
+    
+  }
+  .array_person #year {
+    position: relative;
+    margin-top: 2vw;
+    font-size: 9vw;
+  }
+
   .array_person {
+    padding: 10vw;
     margin-top: 30px; 
     margin-right: 6vw;
     width: 100vw;

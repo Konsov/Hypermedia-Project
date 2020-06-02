@@ -19,7 +19,6 @@ var id = getUrlParameter('id');
 $(window).on("load",function () {
     $.getJSON('/api/event/'+ id, function (project) { 
 
-        console.log(project);
 
         var name = project[0].name;
         var description = project[0].text_presentation;
@@ -29,11 +28,24 @@ $(window).on("load",function () {
         elem +='<strong>Name</strong>';
         elem +='<br>' + name + '<br>';
         elem +='<strong>When?</strong>';
+
+        var timeStr = project[0].ending_date;
+        var date = new Date(timeStr);
+        var day = date.getDate();
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var dateStr1 = day+"/"+month+"/"+year;
+        var timeStr = project[0].starting_date;
+        var date = new Date(timeStr);
+        var day = date.getDate();
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var dateStr2 = day+"/"+month+"/"+year;
         
         if(project[0].starting_date == project[0].ending_date){
-            elem +='<br>' + project[0].starting_date + '<br>';
+            elem +='<br>' + dateStr2 + '<br>';
         }else{
-            elem +='<br> From ' + project[0].starting_date + ' to' + project[0].ending_date + '<br>';
+            elem +='<br> From ' + dateStr2 + ' to ' + dateStr1 + '<br>';
         }
         
         elem +='<strong>Descritpion of The Service</strong>';
@@ -44,11 +56,45 @@ $(window).on("load",function () {
 
         $(".first_text").append(title);
         $(".service-info").append(elem);
+
+        elem = '';
+
+        
+
+        $.getJSON('/api/event/'+ id+'/prev', function (prev) { 
+
+            elem = '';
+            if (prev.length == 0){
+                elem += '<a href="#" class="previous evnt-btn inactiveLink">&laquo; Previous</a>'
+            } else {
+                elem += '<a href="/pages/event.html?id='+prev[0].id+'" class="previous evnt-btn">&laquo; Previous</a>'
+            }
+            $('#buttons').append(elem)
+
+            
+            $.getJSON('/api/event/'+ id+'/next', function (next) { 
+
+                elem = '';
+                if (next.length == 0){
+                    elem +='<a href="#" class="next evnt-btn inactiveLink">Next &raquo;</a>'
+                    
+                } else {
+                    elem +='<a href="/pages/event.html?id='+next[0].id+'" class="next evnt-btn">Next &raquo;</a>'
+                }   
+                $('#buttons').append(elem) 
+            
+            });
+        });
+
+        
+
+        
     });
+
+   
     
     $.getJSON('/api/event/'+ id + '/person', function (person) { 
 
-        console.log(person)
         personInfo= '';
         
         for (let i = 0; i < person.length; i++) {
@@ -70,7 +116,6 @@ $(window).on("load",function () {
 
     $.getJSON('/api/event/'+ id + '/service', function (service) { 
 
-        console.log(service)
         serviceInfo= '';
         firstProject = true;
         firstEvent=true;
@@ -91,6 +136,5 @@ $(window).on("load",function () {
     });
 
 });
-
 
 

@@ -160,6 +160,46 @@ paths:
         404:
           description: "Event not found"
       x-swagger-router-controller: "Event"
+  /event/{id}/next:
+    get:
+      tags:
+      - "event"
+      description: "Obtain information about next event given a specific one"
+      operationId: "eventIdNextGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the event"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Event"
+        404:
+          description: "Event not found"
+      x-swagger-router-controller: "Event"
+  /event/{id}/prev:
+    get:
+      tags:
+      - "event"
+      description: "Obtain information about prev event given a specific one"
+      operationId: "eventIdPrevGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID of the event"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Event"
+        404:
+          description: "Event not found"
+      x-swagger-router-controller: "Event"     
   /event/month:
     get:
       tags:

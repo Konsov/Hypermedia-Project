@@ -36,6 +36,28 @@ module.exports.eventIdPersonGET = function eventIdPersonGET (req, res, next) {
     });
 };
 
+module.exports.eventIdNextGET = function eventIdNextGET (req, res, next) {
+  var id = req.swagger.params['id'].value;
+  Event.eventIdNextGET(id)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
+module.exports.eventIdPrevGET = function eventIdPrevGET (req, res, next) {
+  var id = req.swagger.params['id'].value;
+  Event.eventIdPrevGET(id)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
 module.exports.eventGroupGET = function eventGroupGET (req, res, next) {
   var month = req.swagger.params['month'].value;
   var year = req.swagger.params['year'].value;
