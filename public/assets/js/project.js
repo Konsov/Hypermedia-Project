@@ -104,7 +104,7 @@ $(window).on("load",function () {
             var id = service[i].id;
 
             serviceInfo += '<div class="col-lg-2" id="person-info">';
-            serviceInfo += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="serviceImg">';
+            serviceInfo += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="serviceImg id="imgperson"">';
             serviceInfo += '<a href="service.html?id=' + id + '">'+ name + '</a>';
             serviceInfo += '</div>';
           

@@ -25,11 +25,9 @@ $(window).on("load",function () {
         var description = project[0].text_presentation;
 
         elem = '<p class="service-paragraph">';
-        elem +='<img src="'+project[0].image+'" class="service-img" alt="service-img" width="400vw">';
+        elem +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><img src="'+project[0].image+'" class="service-img" alt="service-img" width="400vw"></div>';
         elem +='<strong>Name</strong>';
         elem +='<br>' + name + '<br>';
-        elem +='<strong>Where</strong>';
-        elem +='<br> map page <br>';
         elem +='<strong>When?</strong>';
         
         if(project[0].starting_date == project[0].ending_date){
@@ -60,14 +58,14 @@ $(window).on("load",function () {
             var id = person[i].id;
 
             personInfo += '<div class="col-lg-2" id="person-info">';
-            personInfo += '<img src="' + image + '" alt="personeImage">';
+            personInfo += '<img src="' + image + '" alt="personeImage" id="imgperson">';
             personInfo += '<a href="singlePerson.html?id=' + id + '">'+ name + '</a>';
             personInfo += '</div>';
           
-            
-            $("#person-involved").append(personInfo);
-            personInfo = '';
+          
         }
+          
+        $("#person-involved").append(personInfo);
     });
 
     $.getJSON('/api/event/'+ id + '/service', function (service) { 
@@ -82,7 +80,7 @@ $(window).on("load",function () {
             var id = service[i].id;
 
             serviceInfo += '<div class="col-lg-2" id="person-info">';
-            serviceInfo += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="serviceImg">';
+            serviceInfo += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="serviceImg" id="imgperson">';
             serviceInfo += '<a href="service.html?id=' + id + '">'+ name + '</a>';
             serviceInfo += '</div>';
           

@@ -34,7 +34,7 @@ $(window).on("load",function () {
     $.getJSON('/api/service/'+ id + '/photo', function (photos) { 
         var img = '';
         console.log(photos[0].url)
-        img +='<div class="col-lg-6" id="divimg"><img src="'+ photos[0].url +'" class="service-img" alt="service-img"></div>';
+        img +='<div class="col-lg-6" id="divimg"><img src="'+ photos[0].url +'" class="service-img" alt="service-img" ></div>';
         $(".service-info").prepend(img);
     });
    
@@ -51,7 +51,7 @@ $(window).on("load",function () {
             var id = person[i].id;
 
             personInfo += '<div class="col-lg-2" id="person-info">';
-            personInfo += '<img src="' + image + '" alt="personeImage">';
+            personInfo += '<img src="' + image + '" alt="personeImage" id="imgperson">';
             personInfo += '<a href="singlePerson.html?id=' + id + '">'+ name + '</a>';
             personInfo += '</div>';
           

@@ -14,6 +14,8 @@
     position: relative;
   }
 
+
+  
 .slogan{
     color: white;
     font-size:5vw;
@@ -30,12 +32,13 @@
 }
 
 .service-info{
+  overflow: auto;
   margin-top: 8%;
 }
 
 #person-info{
-  margin-top: 2%;
   margin-right: 2%;
+  margin-bottom: 3%;
 }
 
 .service-img{
@@ -49,6 +52,14 @@
 .service-paragraph{
   font-size: large;
   text-align: justify;
+}
+
+.contact-event{
+  margin-top: 2%;
+}
+
+#imgperson{
+  margin-right: 2%;
 }
 
 .container-projects{
