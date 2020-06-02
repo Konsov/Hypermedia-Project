@@ -7,8 +7,8 @@ $(window).on("load",function () {
         person.sort(function(a, b) {
             return a.id - b.id;
         });
-        k=-1;
-        for (let i = 0; i < person.length; i,k++) {
+        
+        for (let i = 0; i < person.length; i++) {
 
             var id = person[i].id;
             var name = person[i].name;
@@ -35,7 +35,8 @@ $(window).on("load",function () {
             elem += '</div>'
             elem += '</div>'
             
-            if (k % 4 == 0 && i !=0 ){
+            if (i == 3 || i == 7 || i == 11 || i == 14 || (i+1) == person.lenght ){
+                console.log(i)
                 elem += '</div>' 
             }
 
