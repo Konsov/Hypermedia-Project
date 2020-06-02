@@ -35,7 +35,7 @@ $(window).on("load",function () {
             elem += '</div>'
             elem += '</div>'
             
-            if (i % 4 == 0 && i !=0 ){
+            if (k % 4 == 0 && i !=0 ){
                 elem += '</div>' 
             }
 
