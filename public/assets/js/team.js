@@ -29,7 +29,7 @@ $(window).on("load",function () {
             elem += '<p id="name">'+ name +'</p>'
             elem += '<p>'+ role +'</p>'
             elem += '<p id="profession">'+ profession +'</p>'
-            elem += '<ul class="social-icons" style="width: 17vw;">'
+            elem += '<ul class="social-icons" id="w17">'
             elem += '<li><a class="mail" href="mailto:'+email+'"><i class="fa fa-envelope-o"></i></a></li>'
             elem += '</ul>'
             elem += '</div>'

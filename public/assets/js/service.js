@@ -22,7 +22,7 @@ $(window).on("load",function () {
         var name = service.name;
         var description = service.description;
 
-        elem = '<p class="service-paragraph"><strong>Descritpion of The Service</strong><br>' + description + '</p>';
+        elem = '<p class="service-paragraph"><strong>Description of The Service</strong><br>' + description + '</p>';
     
         title = '<strong class="slogan">' + name + '<br></strong>'
 
@@ -91,7 +91,7 @@ $(window).on("load",function () {
                 if(i == 0){
                     elem +='<p class="project-title">RELATED PROJECTS</p>'
                     elem +='<div class="projects">'
-                    elem +='<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="height: 400px;">'
+                    elem +='<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" >'
                     elem +='<ol class="carousel-indicators">'
                     elem +='<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>'
                     elem +='<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>'
@@ -99,12 +99,12 @@ $(window).on("load",function () {
                     elem +='</ol>'
                     elem += '<div id="carousel-projects" class="carousel-inner">'
                     elem +='<div class="carousel-item active">';
-                    elem +='<img src=" ' + photos[0].url + '" style="height: 400px" class="d-block w-100" alt="...">'
+                    elem +='<img src=" ' + photos[0].url + '" id="h400" class="d-block w-100" alt="...">'
                     elem +='<div class="overlay">';
-                    elem +='<div style="width: 100%;height: 100%;position: relative;">';
+                    elem +='<div id="cento"';
                     elem +='<div class="centro">';
-                    elem +='<p style="color: white; font-size: large; font-weight:bold">' + projects[i].name +'</p>';
-                    elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
+                    elem +='<p id="texticon1">' + projects[i].name +'</p>';
+                    elem += '<p id="textcaro">'
                     elem += ''+ projects[i].description +'</p>'
                     elem +='<a href="project.html?id='+projects[i].id+'" type="button" class="btn btn-light">Read More</a>';
                     elem +='</div>';
@@ -126,12 +126,12 @@ $(window).on("load",function () {
                 }else{
                     elem = '';
                     elem+='<div class="carousel-item">';
-                    elem+='<img src=" ' + photos[0].url + '" style="height: 400px" class="d-block w-100" alt="...">';
+                    elem+='<img src=" ' + photos[0].url + '" id="h400" class="d-block w-100" alt="...">';
                     elem+='<div class="overlay">'
-                    elem+='<div style="width: 100%;height: 100%;position: relative;">';
+                    elem+='<div id="cento">';
                     elem+='<div class="centro">';
-                    elem+='<p style="color: white; font-size: large; font-weight:bold">' + projects[i].name  +  '</p>';
-                    elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
+                    elem+='<p id="texticon1">' + projects[i].name  +  '</p>';
+                    elem += '<p id="textcaro">'
                     elem += ''+ projects[i].description +'</p>'
                     elem +='<a href="project.html?id='+projects[i].id+'" type="button" class="btn btn-light">Read More</a>';
                     elem +='</div>';
@@ -155,7 +155,7 @@ $(window).on("load",function () {
                 if(i == 0){
                     elem +='<p class="project-title">RELATED EVENTS</p>'
                     elem +='<div class="events">'
-                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" style="height: 400px;">'
+                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel">'
                     elem +='<ol class="carousel-indicators">'
                     elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>'
                     elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>'
@@ -164,13 +164,12 @@ $(window).on("load",function () {
                     elem += '<div id="carousel-events" class="carousel-inner">'
 
                     elem +='<div class="carousel-item active">';
-                    elem +='<img src=" ' + events[i].image + '" style="height: 400px" class="d-block w-100" alt="...">'
-                    elem +='<div class="overlay">';
-                    elem +='<div style="width: 100%;height: 100%;position: relative;">';
-                    elem +='<div class="centro">';
-                    elem +='<p style="color: white; font-size: large; font-weight:bold">' + events[i].name +'</p>';
-                    elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
-                    elem += ''+ events[i].text_presentation +'</p>'
+                    elem+='<img src=" ' + events[i].image + '" id="h400" class="d-block w-100" alt="...">';
+                    elem+='<div class="overlay">'
+                    elem+='<div id="cento">';
+                    elem+='<div class="centro">';
+                    elem+='<p id="texticon1">' + events[i].name  +  '</p>';
+                    elem += '<p id="textcaro">'
                     elem +='<a href="event.html?id='+ events[i].id+'" type="button" class="btn btn-light">Read More</a>';
                     elem +='</div>';
                     elem +='</div>';
@@ -191,12 +190,12 @@ $(window).on("load",function () {
                 }else{
                     elem = '';
                     elem+='<div class="carousel-item">';
-                    elem+='<img src=" ' + events[i].image + '" style="height: 400px" class="d-block w-100" alt="...">';
+                    elem+='<img src=" ' + events[i].image + '" id="h400" class="d-block w-100" alt="...">';
                     elem+='<div class="overlay">'
-                    elem+='<div style="width: 100%;height: 100%;position: relative;">';
+                    elem+='<div id="cento">';
                     elem+='<div class="centro">';
-                    elem+='<p style="color: white; font-size: large; font-weight:bold">' +  events[i].name  +  '</p>';
-                    elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
+                    elem+='<p id="texticon1">' + events[i].name  +  '</p>';
+                    elem += '<p id="textcaro">'
                     elem += ''+ events[i].text_presentation +'</p>'
                     elem +='<a href="event.html?id='+ events[i].id+'" type="button" class="btn btn-light">Read More</a>';
                     elem +='</div>';

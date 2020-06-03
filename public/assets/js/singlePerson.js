@@ -49,7 +49,7 @@ $(window).on("load",function () {
         elem = '';
         elem += '<div class="row">'
         for (let i = 0; i < service.length; i++) {
-            elem += '<a style="margin-left:15px;" href="service.html?id=' + service[i].id + '">'+ service[i].name + '</a>'; 
+            elem += '<a id="serv_link" href="service.html?id=' + service[i].id + '">'+ service[i].name + '</a>'; 
         }
         elem += '</div>'
         $("#person_service").append(elem);
@@ -64,7 +64,7 @@ $(window).on("load",function () {
                 if(i == 0){
                     elem +='<p class="project-title">RELATED EVENTS</p>'
                     elem +='<div class="events">'
-                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" style="height: 400px;">'
+                    elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" id="h400">'
                     elem +='<ol class="carousel-indicators">'
                     elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>'
                     elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>'
@@ -73,12 +73,12 @@ $(window).on("load",function () {
                     elem += '<div id="carousel-events" class="carousel-inner">'
 
                     elem +='<div class="carousel-item active">';
-                    elem +='<img src=" ' + events[i].image + '" style="height: 400px" class="d-block w-100" alt="...">'
+                    elem +='<img src=" ' + events[i].image + '" id="h450" class="d-block" alt="...">'
                     elem +='<div class="overlay">';
-                    elem +='<div style="width: 100%;height: 100%;position: relative;">';
+                    elem +='<div id="cento">';
                     elem +='<div class="centro">';
-                    elem +='<p style="color: white; font-size: large; font-weight:bold">' + events[i].name +'</p>';
-                    elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
+                    elem +='<p id="texticon1">' + events[i].name +'</p>';
+                    elem += '<p id="textcaro">'
                     elem += ''+ events[i].text_presentation +'</p>'
                     elem +='<a href="event.html?id='+ events[i].id+'" type="button" class="btn btn-light">Read More</a>';
                     elem +='</div>';
@@ -100,12 +100,12 @@ $(window).on("load",function () {
                 }else{
                     elem = '';
                     elem+='<div class="carousel-item">';
-                    elem+='<img src=" ' + events[i].image + '" style="height: 400px" class="d-block w-100" alt="...">';
+                    elem+='<img src=" ' + events[i].image + '" id="h450" class="d-block" alt="...">';
                     elem+='<div class="overlay">'
-                    elem+='<div style="width: 100%;height: 100%;position: relative;">';
+                    elem+='<div id="cento">';
                     elem+='<div class="centro">';
-                    elem+='<p style="color: white; font-size: large; font-weight:bold">' +  events[i].name  +  '</p>';
-                    elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; color: white;">'
+                    elem+='<p id="texticon1">' +  events[i].name  +  '</p>';
+                    elem += '<p id="textcaro">'
                     elem += ''+ events[i].text_presentation +'</p>'
                     elem +='<a href="event.html?id='+ events[i].id+'" type="button" class="btn btn-light">Read More</a>';
                     elem +='</div>';

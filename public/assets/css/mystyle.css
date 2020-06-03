@@ -218,6 +218,10 @@
   margin-left:5vw;
 }
 
+#serv_link {
+  margin-left: 15px;
+}
+
 #service_name{
   margin-top:2vw;
   margin-left:2vw;
@@ -233,10 +237,59 @@ margin-left:2vw;
 margin-left:5vw;
 }
 
+body {
+  background: rgba(170, 170, 170, 0.1);
+}
+
+#texticon1 {
+  color: white; 
+  font-size: large;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight:bold
+}
+
+#no_deco {
+  text-decoration:none
+}
+
+#img_light {
+  filter: brightness(40%); 
+}
+
+#carouselExampleCaptions2,#carouselExampleCaptions{
+  height: 400px;
+}
+
+#cento{
+  width: 100%;height: 100%;position: relative;
+}
+
+#textcaro {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; 
+  color: white;
+}
+
+#h400 {
+ height: 400px; 
+}
+#h450 {
+  height:450px;
+  width: 100%;
+}
+
+#carousel- {
+  margin-left:auto;
+  margin-right:auto
+}
 
 .error-wrapper {
   background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .error-wrapper {
   text-align: center;
@@ -454,6 +507,16 @@ margin-left:5vw;
   margin-top: 10px
 }
 
+#margin-donate #p1 {
+  font-size: 36px; 
+  font-weight: bold;
+}
+
+#margin-donate #p2 {
+  font-size: 25px; 
+  font-weight: 600;
+}
+
 #info_person {
   margin-top: 2vw;
 }
@@ -593,17 +656,61 @@ margin-left:5vw;
   text-decoration: underline;
 }
 
-.box-c.custom-underline,
-.box-c.custom-underline:hover,
+.box-c .custom-underline,
+.box-c .custom-underline:hover,
 .box-c .custom-underline:focus,
-.box-c.custom-underline:active {
+.box-c .custom-underline:active {
   color: rgb(0, 0, 0);
   text-decoration: none;
+  font-weight:bold;
+  margin-bottom:15px; 
+  text-align: left;
+}
+
+#margin-team {
+  margin-top: 30px;
+}
+
+#car {
+  margin-top: 2vw;
 }
 
 .custom-underline::after {
   content: "";
   position: absolute;
+}
+
+#margin-donate {
+  margin-top: 2vw;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 white;
+}
+
+#border {
+  background: rgba(170, 170, 170, 0.1);
+}
+
+#bord {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 white;
+
+}
+
+#pad {
+  padding: 2vw;
+}
+
+#icon-cal {
+  margin-left: 3px;
+}
+
+#buttons {
+  padding:2vw
+}
+
+#w17 {
+  width: 17vw;
 }
 
 /*------------------------------------*/
@@ -656,6 +763,14 @@ margin-left:5vw;
 .normal-underline:hover {
   color: #444;
   text-decoration: underline;
+}
+
+#text p{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical
 }
 
 .box-b .custom-underline,

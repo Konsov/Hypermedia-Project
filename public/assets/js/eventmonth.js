@@ -52,7 +52,7 @@ $(window).on("load",function () {
                 elem += '<div class="row align-items-center">'
             }       
             
-            elem += '<div class="array_person" style="" align="center">'
+            elem += '<div class="array_person" align="center">'
             elem += '<div class="column" >'
             elem += '<a href="/pages/event.html?id='+id+'">'
             elem += '<img src="'+ image +'" "alt="eventImage">'

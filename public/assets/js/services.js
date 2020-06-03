@@ -18,7 +18,7 @@ $(window).on("load",function () {
                 elem += '<div id="service-img" class="col-lg-5">'
                 elem += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="Association"></div>'
                 elem += '<div id="text" class="col-lg-7">'
-                elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 5;-webkit-box-orient: vertical;">'
+                elem += '<p>'
                 elem += ''+ description +'</p>'
                 elem += '<a href="/pages/service.html?id='+ id +'" class="btn btn-dark">Read More</a>'
                 elem += '</div>'
@@ -26,7 +26,7 @@ $(window).on("load",function () {
            }else{
                 elem += '<div class="row">'
                 elem += '<div id="text" class="col-lg-7">'
-                elem += '<p style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 5;-webkit-box-orient: vertical;">'
+                elem += '<p>'
                 elem += ''+ description +'</p>'
                 elem += '<a href="/pages/service.html?id='+ id +'" class="btn btn-dark">Read More</a>'
                 elem += '</div>'
