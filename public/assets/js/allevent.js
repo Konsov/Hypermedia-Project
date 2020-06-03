@@ -61,12 +61,12 @@ function setDate(m,y){
         }    
         
         elem += '<div class="array_person"  align="center">'
-        elem += '<div class="column" style="transform: rotate(0);">'
-        elem += '<a class="stretched-link" href="/pages/eventmonth.html?month='+(m+1+j)+'&year='+y+'">'
+        elem += '<div class="column">'
+        elem += '<a href="/pages/eventmonth.html?month='+(m+1+j)+'&year='+y+'">'
         elem += '<img src="'+ img[i] +'" "alt="personeImage" style="filter: brightness(60%); saturate(140%)">'        
         elem += '</a>'
-        elem += '<p id="month">'+ month[(m+j)] +'</p>'
-        elem += '<p id="year">'+ y +'</p>'
+        elem += '<a style="text-decoration:none" href="/pages/eventmonth.html?month='+(m+1+j)+'&year='+y+'"><p id="month">'+ month[(m+j)] +'</p></a>'
+        elem += '<a style="text-decoration:none" href="/pages/eventmonth.html?month='+(m+1+j)+'&year='+y+'"><p id="year">'+ y +'</p></a>'
         elem += '</a>'        
         elem += '</div>'
         elem += '</div>'

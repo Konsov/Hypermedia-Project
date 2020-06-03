@@ -9,11 +9,10 @@ To run the server, run:
 ```
 npm start
 ```
-1)guardare card home
-2)card più alte mobile
-3)carousel più largo mobile
-4)guardare impostazioni modal
-5)modal su service
+1)guardare card home - conso
+2)card più alte mobile - conso
+5)modal su service - conso
+6)bottoni event - conso
 
 To view the Swagger UI interface:
 

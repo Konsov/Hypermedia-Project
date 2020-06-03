@@ -196,7 +196,7 @@
   color:white;
   font-weight: bold;
   text-transform: uppercase;
-  position: absolute;
+  position: relative;
   margin-top: -13vw;
   
   
@@ -207,8 +207,8 @@
   font-size: 3vw;
   font-weight: bold;
   text-transform: uppercase;
-  position: absolute;
-  margin-top: -10vw;
+  position: relative;
+  margin-top: -1vw;
   
 }
 
@@ -418,11 +418,20 @@ margin-left:5vw;
   margin-top: 30px; 
   flex:auto;
   width: 15vw;
+  padding-bottom: 5vw;
+  
 }
 
 .array_person a img {
   width: 17vw;
   height: 17vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 white;
+}
+
+.array_person a img:hover {
+  width: 17vw;
+  height: 17vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #person_img {
@@ -433,7 +442,7 @@ margin-left:5vw;
 }
 .array_person p {
   text-align: center; 
-  width: 100%; 
+  width: 17vw; 
 }
 
 .array_person #profession {

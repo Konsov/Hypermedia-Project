@@ -5,7 +5,7 @@ $(window).on("load",function () {
         elem = '';
         primo = true;
         for (let i = 0; i < projects.length; i++) {
-            if(projects[i].status == 'In Progress'){
+            if(projects[i].status == 'in progress'){
                 $.getJSON('/api/project/'+ projects[i].id + '/photo', function (photos) { 
                 
                     if(primo == true){
@@ -19,7 +19,7 @@ $(window).on("load",function () {
                         elem +='</ol>'
                         elem += '<div id="carousel-projects" class="carousel-inner">'
                         elem +='<div class="carousel-item active">';
-                        elem +='<img src=" ' + photos[0].url + '" style="height: 450px" class="d-block w-100" alt="...">'
+                        elem +='<img src=" ' + photos[0].url + '" style="height: 450px" class="d-block" alt="...">'
                         elem +='<div class="overlay">';
                         elem +='<div style="width: 100%;height: 100%;position: relative;">';
                         elem +='<div class="centro">';
@@ -47,7 +47,7 @@ $(window).on("load",function () {
                     }else{
                         elem = '';
                         elem+='<div class="carousel-item">';
-                        elem+='<img src=" ' + photos[0].url + '" style="height: 450px" class="d-block w-100" alt="...">';
+                        elem+='<img src=" ' + photos[0].url + '" style="height: 450px; width:100%" class="d-block" alt="...">';
                         elem+='<div class="overlay">'
                         elem+='<div style="width: 100%;height: 100%;position: relative;">';
                         elem+='<div class="centro">';
