@@ -196,7 +196,7 @@
   color:white;
   font-weight: bold;
   text-transform: uppercase;
-  position: absolute;
+  position: relative;
   margin-top: -13vw;
   
   
@@ -207,8 +207,8 @@
   font-size: 3vw;
   font-weight: bold;
   text-transform: uppercase;
-  position: absolute;
-  margin-top: -10vw;
+  position: relative;
+  margin-top: -1vw;
   
 }
 
@@ -418,6 +418,7 @@ margin-left:5vw;
   margin-top: 30px; 
   flex:auto;
   width: 15vw;
+  padding-bottom: 5vw;
   
 }
 
@@ -441,7 +442,7 @@ margin-left:5vw;
 }
 .array_person p {
   text-align: center; 
-  width: 100%; 
+  width: 17vw; 
 }
 
 .array_person #profession {
