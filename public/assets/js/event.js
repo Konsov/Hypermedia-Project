@@ -57,42 +57,10 @@ $(window).on("load",function () {
         $(".first_text").append(title);
         $(".service-info").append(elem);
 
-        elem = '';
+        elem = '';        
 
-        
-
-        $.getJSON('/api/event/'+ id+'/prev', function (prev) { 
-
-            elem = '';
-            if (prev.length == 0){
-                elem += '<a href="#" class="previous evnt-btn inactiveLink">&laquo; Previous</a>'
-            } else {
-                elem += '<a href="/pages/event.html?id='+prev[0].id+'" class="previous evnt-btn">&laquo; Previous</a>'
-            }
-            $('#buttons').append(elem)
-
-            
-            $.getJSON('/api/event/'+ id+'/next', function (next) { 
-
-                elem = '';
-                if (next.length == 0){
-                    elem +='<a href="#" class="next evnt-btn inactiveLink">Next &raquo;</a>'
-                    
-                } else {
-                    elem +='<a href="/pages/event.html?id='+next[0].id+'" class="next evnt-btn">Next &raquo;</a>'
-                }   
-                $('#buttons').append(elem) 
-            
-            });
-        });
-
-        
-
-        
     });
 
-   
-    
     $.getJSON('/api/event/'+ id + '/person', function (person) { 
 
         personInfo= '';
@@ -135,6 +103,31 @@ $(window).on("load",function () {
         }
     });
 
+    
+    $.getJSON('/api/event/'+ id+'/prev', function (prev) { 
+
+        elem = '';
+        if (prev.length == 0){
+            elem += '<a href="#" class="previous evnt-btn inactiveLink">&laquo; Previous</a>'
+        } else {
+            elem += '<a href="/pages/event.html?id='+prev[0].id+'" class="previous evnt-btn">&laquo; Previous</a>'
+        }
+        $('#buttons').append(elem)
+
+        
+        $.getJSON('/api/event/'+ id+'/next', function (next) { 
+
+            elem = '';
+            if (next.length == 0){
+                elem +='<a href="#" class="next evnt-btn inactiveLink">Next &raquo;</a>'
+                
+            } else {
+                elem +='<a href="/pages/event.html?id='+next[0].id+'" class="next evnt-btn">Next &raquo;</a>'
+            }   
+            $('#buttons').append(elem) 
+        
+        });
+    });
 });
 
 
