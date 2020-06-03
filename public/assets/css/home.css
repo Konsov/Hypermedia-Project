@@ -177,6 +177,16 @@
 }
 
 
+#service{
+  border-radius: 5px;
+  border-style: double;
+  border-color: grey;
+  padding: 2%;
+  background-color: white;
+}
+#text{
+  text-align: justify;
+}
 .box-b,
 .box-e {
   position: relative;
