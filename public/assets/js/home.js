@@ -5,7 +5,7 @@ $(window).on("load",function () {
         elem = '';
         primo = true;
         for (let i = 0; i < projects.length; i++) {
-            if(projects[i].status == 'in progress'){
+            if(projects[i].status == 'In Progress'){
                 $.getJSON('/api/project/'+ projects[i].id + '/photo', function (photos) { 
                 
                     if(primo == true){
