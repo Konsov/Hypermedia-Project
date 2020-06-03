@@ -185,6 +185,7 @@
 }
 
 #service{
+  margin: 2%;
   border-radius: 5px;
   border-style: double;
   border-color: grey;
