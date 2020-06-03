@@ -179,7 +179,10 @@
   transform: translate(-50%, -50%);
   padding: 5%;
 }
-
+.container-service{
+  width: 80%;
+  margin: auto;
+}
 
 #service{
   border-radius: 5px;
