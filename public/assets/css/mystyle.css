@@ -177,6 +177,11 @@
     display: block !important;
 }
 
+.container-team{
+  width: 80%;
+  margin: auto;
+}
+
 .owl-next {
     width: 15px;
     height: 15px;
@@ -672,7 +677,7 @@ body {
 }
 
 #car {
-  margin-top: 2vw;
+  margin-top: 7%;
 }
 
 .custom-underline::after {
