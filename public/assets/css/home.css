@@ -115,7 +115,7 @@
 }
 
 .info-about-us{
-    width: 63%;
+    width: 75%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -123,7 +123,7 @@
     transform: translate(-50%, -50%);
     border-style: double;
     border-color: white;
-    padding: 2%;
+    padding: 1%;
 }
 
 .numbers{
@@ -237,6 +237,22 @@ body {
   margin-top: 1em;
   margin-bottom: 1em;
   font-weight:bold
+}
+
+.textaboutus1 {
+  color: white; 
+  font-size: large;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight:bold
+}
+
+.textaboutus2 {
+  color: white; 
+  font-size: large;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: justify;
 }
 
 #cento{
