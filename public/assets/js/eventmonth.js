@@ -55,9 +55,10 @@ $(window).on("load",function () {
 
         }else{
 
+            elem = '';
             for (let i = 0; i < event.length; i++) {
 
-                elem = '';
+                
                 var id = event[i].id;
                 var name = event[i].name;
                 var tp = event[i].text_presentation;
@@ -85,13 +86,14 @@ $(window).on("load",function () {
                 elem += '</div>'
                 elem += '</div>'
                 
-                if (i % 1==0 && i !=0 ){
+                if (i % 2 == 1){
+                    console.log(i)
                     elem += '</div>' 
                 }
 
-                $('#event_month_array').append(elem)
-
             }
+
+            $('#event_month_array').append(elem)
 
         }
 
