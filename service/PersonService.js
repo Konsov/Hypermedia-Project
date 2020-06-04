@@ -20,39 +20,6 @@ var sqlDb = knex({
   debug: process.env.NODE_ENV === "development"
 });
 
-exports.personDbSetup = function(database) {
-      sqlDb = database;
-      const tableName = "person";
-      console.log("Checking if %s table exists", tableName);
-      if(process.env.HYP_DROP_ALL)
-          database.schema.dropTableIfExists(tableName);
-      return database.schema.hasTable(tableName).then(exists => {
-          if (!exists) {
-              console.log("It doesn't so we create it");
-              return database.schema.createTable(tableName, table => {
-                  table.increments("id");
-                  table.text("name").notNullable();
-                  table.integer("age").notNullable();
-                  table.text("role").notNullable();;
-                  table.text("profession").notNullable();
-                  table.text("short_description").notNullable()// TODO mettere qualcosa di sensato
-                  table.text("email").notNullable();
-              })
-              .then(() => resolve(tableName))
-              .catch(err => {
-                  console.error(err);
-                  Promise.reject(tableName)
-              });
-                  
-          } else {
-              console.log(`Table ${tableName} already exists, skipping...`);
-              return Promise.resolve();
-              
-          }
-      });
-  
-
-};
 
 
 exports.personGET = function(bodyLimit,pageLimit) {
