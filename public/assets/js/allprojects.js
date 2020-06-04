@@ -197,6 +197,7 @@ $(window).on("load",function () {
         projects.sort(function(a, b) {
             return a.id - b.id;
         });
+        console.log(projects)
         prog = projects;
         var elem= '';
        

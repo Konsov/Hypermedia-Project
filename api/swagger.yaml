@@ -12,7 +12,7 @@ info:
   license:
     name: "Eco Vibes License"
     url: "http://license.foo.com"
-host: hypproject1920.herokuapp.com
+host: localhost:5000
 basePath: /api
 tags:
 - name: "person"
@@ -24,7 +24,7 @@ tags:
 - name: "project"
   description: "Everything about project"
 schemes:
-- "https"
+- "http"
 paths:
   /person:
     get:
@@ -32,17 +32,6 @@ paths:
       - "person"
       description: "Obtain information about the people working in the company"
       operationId: "personGET"
-      parameters:
-      - name: "bodyLimit"
-        in: "query"
-        description: "The amount of people returned"
-        required: false
-        type: "integer"
-      - name: "pageLimit"
-        in: "query"
-        description: "The pages to return people info"
-        required: false
-        type: "integer"
       responses:
         200:
           description: "Seccesful pull of people info"
@@ -123,12 +112,6 @@ paths:
       - "event"
       description: "Obtain information about event proposed by the company"
       operationId: "eventGET"
-      parameters:
-      - name: "finished"
-        in: "query"
-        description: "If the event is finished"
-        required: false
-        type: "boolean"
       responses:
         200:
           description: "Seccesful pull of event"

@@ -18,7 +18,7 @@ var sqlDb = knex({
  * finished Boolean If the event is finished (optional)
  * returns List
  **/
-exports.eventGET = function(finished) {
+exports.eventGET = function() {
   return new Promise(function(resolve, reject) {
     sqlDb.select()
     .from('event')
