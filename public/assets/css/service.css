@@ -46,9 +46,6 @@
     position: relative;
   }
 
-  
-
-
 .ui-datepicker-calendar {
   display: none;
   }
@@ -79,13 +76,14 @@
   margin-right: 2%;
   margin-bottom: 3%;
 }
-
+.service-img:hover {
+ border: green solid 2px;
+}
 .service-img{
   float: left;
   clear: both;
   margin-right: 2%;
   width: 100%;
-  height: auto;
 }
 
 .service-paragraph{

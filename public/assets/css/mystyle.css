@@ -177,6 +177,11 @@
     display: block !important;
 }
 
+.container-team{
+  width: 80%;
+  margin: auto;
+}
+
 .owl-next {
     width: 15px;
     height: 15px;

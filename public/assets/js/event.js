@@ -1,3 +1,4 @@
+//take id from url
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -17,6 +18,8 @@ var id = getUrlParameter('id');
 
 
 $(window).on("load",function () {
+
+    //take info of event with id: id
     $.getJSON('/api/event/'+ id, function (project) { 
 
 
@@ -24,7 +27,7 @@ $(window).on("load",function () {
         var description = project[0].text_presentation;
 
         elem = '<p class="service-paragraph">';
-        elem +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><img src="'+project[0].image+'" class="service-img" alt="service-img" width="400vw"></div>';
+        elem +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><img src="'+project[0].image+'" class="service-img img-thumbnail"" alt="service-img" width="400vw"></div>';
         elem +='<strong>Name</strong>';
         elem +='<br>' + name + '<br>';
         elem +='<strong>When?</strong>';
@@ -61,6 +64,7 @@ $(window).on("load",function () {
 
     });
 
+    //take info about person involved in a event
     $.getJSON('/api/event/'+ id + '/person', function (person) { 
 
         personInfo= '';
@@ -72,7 +76,7 @@ $(window).on("load",function () {
             var id = person[i].id;
 
             personInfo += '<div class="col-lg-2" id="person-info">';
-            personInfo += '<img src="' + image + '" alt="personeImage" id="imgperson">';
+            personInfo += '<img class= "img-thumbnail" src="' + image + '" alt="personeImage" id="imgperson">';
             personInfo += '<a href="singlePerson.html?id=' + id + '">'+ name + '</a>';
             personInfo += '</div>';
           
@@ -82,6 +86,7 @@ $(window).on("load",function () {
         $("#person-involved").append(personInfo);
     });
 
+    //take info about service related to an event
     $.getJSON('/api/event/'+ id + '/service', function (service) { 
 
         serviceInfo= '';
@@ -103,7 +108,7 @@ $(window).on("load",function () {
         }
     });
 
-    
+    //buttons to go at previous and next event
     $.getJSON('/api/event/'+ id+'/prev', function (prev) { 
 
         elem = '';

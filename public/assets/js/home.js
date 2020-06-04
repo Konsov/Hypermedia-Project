@@ -1,11 +1,13 @@
 $(window).on("load",function () {
+
+    //create a carousel with relevant projects(projects in progress)
     $.getJSON('/api/project', function (projects) { 
 
         console.log(projects);
         elem = '';
         primo = true;
         for (let i = 0; i < projects.length; i++) {
-            if(projects[i].status == 'in progress'){
+            if(projects[i].status == 'In Progress'){
                 $.getJSON('/api/project/'+ projects[i].id + '/photo', function (photos) { 
                 
                     if(primo == true){

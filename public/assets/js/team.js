@@ -1,7 +1,7 @@
 $(window).on("load",function () {
 
     $.getJSON('/api/person', function (person) { 
-        
+        //get info for person
 
         var elem= '';
         person.sort(function(a, b) {

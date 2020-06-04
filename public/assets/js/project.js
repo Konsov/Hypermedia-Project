@@ -1,3 +1,4 @@
+//take id from url
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -16,10 +17,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
 var id = getUrlParameter('id');
 
 
-
-
-
 $(window).on("load",function () {
+    //take from db info about project with id id 
     $.getJSON('/api/project/'+ id, function (project) { 
 
         console.log(project)
@@ -68,10 +67,11 @@ $(window).on("load",function () {
         $(".service-info").append(elem);
     });
 
+    //take photos and create gallery for the project
     $.getJSON('/api/project/'+ id + '/photo', function (photos) { 
         var img = '';
         console.log(photos)
-        img +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><img src="'+ photos[0].url +'" class="service-img" alt="service-img"></div>';
+        img +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><a href="#"><img src="'+ photos[0].url +'" class="service-img img-thumbnail" alt="service-img"></a></div>';
         $(".service-info").prepend(img);
 
        
@@ -94,7 +94,7 @@ $(window).on("load",function () {
 
     });
    
-    
+   
     $.getJSON('/api/project/'+ id + '/service', function (service) { 
 
         console.log(service)
@@ -104,27 +104,35 @@ $(window).on("load",function () {
         for (let i = 0; i < service.length; i++) {
             
             var name = service[i].name;
-            var id = service[i].id;
+            var idserv = service[i].id;
 
             serviceInfo += '<div class="col-lg-2" id="person-info">';
-            serviceInfo += '<img src="../assets/img/servizio'+ id+'b.jpg" class="img-thumbnail" alt="serviceImg id="imgperson"">';
-            serviceInfo += '<a href="service.html?id=' + id + '">'+ name + '</a>';
+            serviceInfo += '<img src="../assets/img/servizio'+ idserv+'b.jpg" class="img-thumbnail" alt="serviceImg id="imgperson"">';
+            serviceInfo += '<a href="service.html?id=' + idserv + '">'+ name + '</a>';
             serviceInfo += '</div>';
           
             
             $("#person-involved").append(serviceInfo);
             serviceInfo = '';
   
-
-            $.getJSON('/api/service/'+ id + '/project', function (projects) { 
+            //take projects related to this (projects with same services) 
+            $.getJSON('/api/service/'+ idserv + '/project', function (projects) { 
                 console.log(firstProject);
                 console.log(projects);
                 elem = '';
 
+
                 for (let i = 0; i < projects.length; i++) {
+                    
+                    if(projects[i].id == id){
+                        console.log('uno',projects[i].id)
+                        console.log('due',id)
+                        continue;
+                    }
+
                     $.getJSON('/api/project/'+ projects[i].id + '/photo', function (photos) { 
                         console.log(firstProject);
-                        if(i == 0 && firstProject == true){
+                        if(firstProject == true){
                             elem +='<p class="project-title">RELATED PROJECTS</p>'
                             elem +='<div class="projects">'
                             elem +='<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" >'
@@ -135,11 +143,11 @@ $(window).on("load",function () {
                             elem +='</ol>'
                             elem += '<div id="carousel-projects" class="carousel-inner">'
                             elem +='<div class="carousel-item active">';
-                            elem +='<img src=" ' + photos[0].url + '" id="h400" class="d-block w-100" alt="...">'
-                            elem +='<div class="overlay">';
-                            elem +='<div id="cento"';
-                            elem +='<div class="centro">';
-                            elem +='<p id="texticon1">' + projects[i].name +'</p>';
+                            elem+='<img src=" ' + photos[0].url + '" id="h400" class="d-block w-100" alt="...">';
+                            elem+='<div class="overlay">'
+                            elem+='<div id="cento">';
+                            elem+='<div class="centro">';
+                            elem+='<p id="texticon1">' + projects[i].name  +  '</p>';
                             elem += '<p id="textcaro">'
                             elem += ''+ projects[i].description +'</p>'
                             elem +='<a href="project.html?id='+projects[i].id+'" type="button" class="btn btn-light">Read More</a>';
@@ -182,7 +190,7 @@ $(window).on("load",function () {
                 }
             });
      
-            $.getJSON('/api/service/'+ id + '/event', function (events) { 
+            $.getJSON('/api/service/'+ idserv + '/event', function (events) { 
                 console.log(events);
                 elem = '';
 
@@ -228,11 +236,11 @@ $(window).on("load",function () {
                         }else{
                             elem = '';
                             elem+='<div class="carousel-item">';
-                            elem+='<img src=" ' + events[i].image + '" id="h400" class="d-block w-100" alt="...">';
-                            elem+='<div class="overlay">'
-                            elem+='<div id="cento>';
-                            elem+='<div class="centro">';
-                            elem+='<p id="texticon1">' +  events[i].name  +  '</p>';
+                            elem +='<img src=" ' + events[i].image + '" id="h400" class="d-block w-100" alt="...">'
+                            elem +='<div class="overlay">';
+                            elem +='<div id="cento">';
+                            elem +='<div class="centro">';
+                            elem +='<p id="texticon1">' + events[i].name +'</p>';
                             elem += '<p id="textcaro">'
                             elem += ''+ events[i].text_presentation +'</p>'
                             elem +='<a href="event.html?id='+ events[i].id+'" type="button" class="btn btn-light">Read More</a>';
