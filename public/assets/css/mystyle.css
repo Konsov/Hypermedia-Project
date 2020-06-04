@@ -166,6 +166,7 @@
     margin-right:0;
     font-weight:600
   }
+
 }
 
 .owl-prev {
@@ -277,6 +278,12 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical; 
   color: white;
+}
+
+
+#map {
+  width: 50vw;
+  height: 35vw;
 }
 
 #h400 {
@@ -463,8 +470,6 @@ body {
 }
 
 .array_person a img:hover {
-  width: 17vw;
-  height: 17vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -558,7 +563,7 @@ body {
     height: 60vw;
   }
 
-  .header_contact #p1 {
+  .header_contact .slogan {
     font-size: 8vw;
     margin-top: 15vw;
     left:24vw
@@ -567,7 +572,7 @@ body {
 
   
 
-  .header_donate #p1 {
+  .header_donate .slogan {
     font-size: 8vw;
     margin-top: 35vw;
     left:24vw
@@ -579,7 +584,7 @@ body {
     left:28vw
   }
 
-  .header #p1 {
+  .header_association .slogan {
     font-size: 10vw;
     margin-top: 20vw;
     left:20vw
@@ -595,11 +600,11 @@ body {
 
   .header_donate {
     width: 100vw;
-    height: 60vw;
+    height: 40vw;
   }
 
   .header_team,
-  .header{
+  .header_association{
     width: 100vw;
     height: 50vw;
   }
@@ -608,7 +613,7 @@ body {
     font-size: 0vw;
   }
 
-  .header_contact #p2 {
+  .header_contact .baseline {
     font-size: 0vw;
   }
 }

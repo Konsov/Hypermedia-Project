@@ -99,9 +99,7 @@
   margin-right: 2%;
 }
 
-.container-projects{
-  margin-top: 12%;
-}
+
 .project-title{
   font-size: 30px;
   color: green;
@@ -147,15 +145,11 @@
 }
 @media(max-width: 1100px){
   #carouselExampleCaptions2{
-    width: 80vw;
+    width: 67vw;
   }
-}
-#carouselExampleCaptions{
-  width: 40vw;
-}
-@media(max-width: 1100px){
+
   #carouselExampleCaptions{
-    width: 80vw;
+    width: 67vw;
   }
 }
 
@@ -186,6 +180,10 @@
   .serviziointro, .eventintro, .projectintro {
     width: 100vw;
     height: 40vw;
+  }
+
+  .project-title{
+    margin-top: 15%;
   }
   
   .slogan {

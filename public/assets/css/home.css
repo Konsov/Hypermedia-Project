@@ -19,6 +19,16 @@
       font-size: 8vw;
     }
 
+    
+    #icon1 {
+      font-size: 3em;
+    }
+
+    #texticon1 {
+      font-size: smaller;
+      margin-left: 0.5em;
+    }
+
     .intro .baseline {
       font-size: 4vw;
     }
@@ -358,12 +368,9 @@ body {
 }
 @media(max-width: 1100px){
   #carouselExampleCaptions2{
-    width: 80vw;
+    width: 67vw;
   }
-}
-
-@media(max-width: 1100px){
   #carouselExampleCaptions{
-    width: 80vw;
+    width: 67vw;
   }
 }
