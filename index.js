@@ -28,9 +28,6 @@ const express = require('express'),
 const jsyaml = require('js-yaml'),
       serverPort = process.env.PORT;
 
-let {
-  setupDataLayer
-} = require("./service/DataLayer");
 
 
 
@@ -56,33 +53,6 @@ app.use('/backend/app.zip', express.static('app.zip'));
 
 
 
-
-  // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
- 
-  //Serve statically the api specs and the documentation
-  /*if(process.env.SERVE_BACKEND_DOCS)
-    app.use('/backend', express.static(path.join(__dirname, "./other/backend")));
-    */
-
-
-  //==============================================
-  //Handle 404 errors. Leave this as last app.use()
- /* app.use(function(req, res, next) {
-    console.log('404 error on ' + req.url);
-    res.status(404);
-
-    if (req.url.startsWith('/api')) {
-      utils.writeJson(res, {
-        message: "API endpoint not found!"
-      }, 404);
-    } else if (req.accepts('text/html')) {
-      req.url = '/pages/404.html';
-      app.handle(req, res);
-    } else {
-      res.send('404 Not Found');
-    }
-
-  });*/
   swaggerTools.initializeMiddleware(swaggerDoc, function(middleware) {
 
     // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
