@@ -123,12 +123,6 @@ paths:
       - "event"
       description: "Obtain information about event proposed by the company"
       operationId: "eventGET"
-      parameters:
-      - name: "finished"
-        in: "query"
-        description: "If the event is finished"
-        required: false
-        type: "boolean"
       responses:
         200:
           description: "Seccesful pull of event"
