@@ -1,3 +1,4 @@
+//js function to handle the page, we set only 5 projects for page
 function pageNext() {
     if(j == 4){        
         $('#prev').removeClass('disabled');
@@ -190,6 +191,8 @@ function pagePrevious(){
     
     
 }
+
+// on loading page, load all projects from db and create them space on page
 $(window).on("load",function () {
 
     $.getJSON('/api/project', function (projects) { 

@@ -1,8 +1,4 @@
-
-
-
-
-
+// Function to take ID from URL
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -79,9 +75,7 @@ function setDate(m,y){
     $('#months_event').append(elem);
 }
 
-
-
-
+// At load
 
 $(window).on("load",function () {
     var m = getUrlParameter('month');
@@ -92,7 +86,7 @@ $(window).on("load",function () {
     var y = d.getFullYear();
     setDate(m,y);
        
-    
+// Take from db first three event in order by date and create a carousel with the upcoming events
     $.getJSON('/api/event', function (events) {
         
         events.sort(function(a, b) {

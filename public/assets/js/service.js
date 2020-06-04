@@ -1,3 +1,4 @@
+//get id from url
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -17,6 +18,7 @@ var id = getUrlParameter('id');
 
 
 $(window).on("load",function () {
+    //take info from db about service with id id
     $.getJSON('/api/service/'+ id, function (service) { 
         
         var name = service.name;
@@ -31,10 +33,12 @@ $(window).on("load",function () {
         $(".service-info").append(elem);
     });
 
+
+    //create photogallery
     $.getJSON('/api/service/'+ id + '/photo', function (photos) { 
         var img = '';
         console.log(photos)
-        img +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><img src="'+ photos[0].url +'" class="service-img img-thumbnail" alt="service-img"></div>';
+        img +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><a href="#"><img src="'+ photos[0].url +'" class="service-img img-thumbnail" alt="service-img"></a></div>';
         $(".service-info").prepend(img);
 
        
@@ -80,6 +84,7 @@ $(window).on("load",function () {
         }
     });
 
+    //create carousel with projects with this service
     $.getJSON('/api/service/'+ id + '/project', function (projects) { 
 
         console.log(projects);
@@ -144,6 +149,8 @@ $(window).on("load",function () {
             });
         }
     });
+
+    //create a carousle with evemts related to this service
 
     $.getJSON('/api/service/'+ id + '/event', function (events) { 
 

@@ -1,4 +1,6 @@
 $(window).on("load",function () {
+
+    //create a carousel with relevant projects(projects in progress)
     $.getJSON('/api/project', function (projects) { 
 
         console.log(projects);

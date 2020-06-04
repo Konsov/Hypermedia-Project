@@ -1,5 +1,4 @@
-//"use strict";
-
+//get ID from url
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -18,13 +17,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
 var id = getUrlParameter('id');
 
 $(window).on("load",function () {
-
+ 
+    //get info person from db
     $.getJSON('/api/person/'+id, function (person) { 
-        
-        // GET BOOK BY ID /api/book/{bookId}
-        
-        var id = person.id;
-        
+       
         var name = person.name;
         var age = person.age;
         var role = person.role;
@@ -43,6 +39,7 @@ $(window).on("load",function () {
         var img = '<div class="item"><img src="' + image + '" id="person_img" alt=""></div>';
         $("#product-carousel").append(img);
     });
+    
     $.getJSON('/api/person/'+ id + '/service', function (service) {
 
         console.log(service)
