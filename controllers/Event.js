@@ -4,7 +4,7 @@ var utils = require('../utils/writer.js');
 var Event = require('../service/EventService');
 
 module.exports.eventGET = function eventGET (req, res, next) {
-  Event.eventGET(finished)
+  Event.eventGET()
     .then(function (response) {
       utils.writeJson(res, response);
     })
