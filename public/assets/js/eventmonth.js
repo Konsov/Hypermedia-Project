@@ -55,8 +55,12 @@ $(window).on("load",function () {
 
         }else{
 
+            event.sort(function(a, b) {
+                return new Date(a.starting_date).getTime() - new Date(b.starting_date).getTime();
+            });
             elem = '';
             for (let i = 0; i < event.length; i++) {
+                
 
                 
                 var id = event[i].id;

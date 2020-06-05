@@ -57,7 +57,7 @@ $(window).on("load",function () {
             elem +='<br> From ' + dateStr2 + ' to ' + dateStr1 + '<br>';
         }
         
-        elem +='<strong>Descritpion of The Service</strong>';
+        elem +='<strong>Descritpion of The Project</strong>';
         elem +='<br>' + description + '</p>';
     
         title = '<strong class="slogan">' + name + '<br></strong>'

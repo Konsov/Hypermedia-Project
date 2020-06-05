@@ -145,11 +145,15 @@
 }
 @media(max-width: 1100px){
   #carouselExampleCaptions2{
-    width: 67vw;
+    width: 80vw;
   }
-
+}
+#carouselExampleCaptions{
+  width: 40vw;
+}
+@media(max-width: 1100px){
   #carouselExampleCaptions{
-    width: 67vw;
+    width: 80vw;
   }
 }
 

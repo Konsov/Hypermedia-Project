@@ -368,9 +368,12 @@ body {
 }
 @media(max-width: 1100px){
   #carouselExampleCaptions2{
-    width: 67vw;
+    width: 80vw;
   }
+}
+
+@media(max-width: 1100px){
   #carouselExampleCaptions{
-    width: 67vw;
+    width: 80vw;
   }
 }
