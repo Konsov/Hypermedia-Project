@@ -1,4 +1,8 @@
 //js function to handle the page, we set only 5 projects for page
+$.ajaxSetup({
+    async: false
+});
+
 function pageNext() {
     if(j == 4){        
         $('#prev').removeClass('disabled');
@@ -239,7 +243,7 @@ $(window).on("load",function () {
                     elem += '</div>'
                 }
                 elem += '</div>'
-                
+                console.log(i)
                 $('#service-container').append(elem);
             });
         }
