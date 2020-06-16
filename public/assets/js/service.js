@@ -98,9 +98,14 @@ $(window).on("load",function () {
                     elem +='<div class="projects">'
                     elem +='<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" >'
                     elem +='<ol class="carousel-indicators">'
-                    elem +='<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>'
-                    elem +='<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>'
-                    elem += '<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>'
+                    for(let j=0; j < projects.length ;j++){
+                        console.log(j)
+                        if (j==0){
+                            elem +='<li data-target="#carouselExampleCaptions" data-slide-to="'+j+'" class="active"></li>'
+                        } else {
+                            elem +='<li data-target="#carouselExampleCaptions" data-slide-to="'+j+'"></li>'
+                        }
+                    }
                     elem +='</ol>'
                     elem += '<div id="carousel-projects" class="carousel-inner">'
                     elem +='<div class="carousel-item active">';
@@ -166,9 +171,13 @@ $(window).on("load",function () {
                     elem +='<div class="events">'
                     elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel">'
                     elem +='<ol class="carousel-indicators">'
-                    elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>'
-                    elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>'
-                    elem += '<li data-target="#carouselExampleCaptions2" data-slide-to="2"></li>'
+                    for(let j=0; j < events.length ;j++){
+                        if (j==0){
+                            elem +='<li data-target="#carouselExampleCaptions" data-slide-to="'+j+'" class="active"></li>'
+                        } else {
+                            elem +='<li data-target="#carouselExampleCaptions" data-slide-to="'+j+'"></li>'
+                        }
+                    }
                     elem +='</ol>'
                     elem += '<div id="carousel-events" class="carousel-inner">'
 
