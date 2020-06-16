@@ -86,6 +86,13 @@
   width: 100%;
 }
 
+.event-img{
+  float: left;
+  clear: both;
+  margin-right: 2%;
+  width: 100%;
+}
+
 .service-paragraph{
   font-size: large;
   text-align: justify;

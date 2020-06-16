@@ -27,7 +27,7 @@ $(window).on("load",function () {
         var description = project[0].text_presentation;
 
         elem = '<p class="service-paragraph">';
-        elem +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><img src="'+project[0].image+'" class="service-img img-thumbnail"" alt="service-img" width="400vw"></div>';
+        elem +='<div class="col-lg-6" id="divimg" data-toggle="modal" data-target="#exampleModal"><img src="'+project[0].image+'" class="event-img img-thumbnail"" alt="service-img" width="400vw"></div>';
         elem +='<strong>Name</strong>';
         elem +='<br>' + name + '<br>';
         elem +='<strong>When?</strong>';
