@@ -155,6 +155,11 @@
     width: 80vw;
   }
 }
+
+body {
+  background: rgba(170, 170, 170, 0.1) !important;
+}
+
 #carouselExampleCaptions{
   width: 40vw;
 }

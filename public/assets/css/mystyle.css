@@ -244,7 +244,7 @@ margin-left:5vw;
 }
 
 body {
-  background: rgba(170, 170, 170, 0.1);
+  background: rgba(170, 170, 170, 0.1) !important;
 }
 
 #texticon1 {
