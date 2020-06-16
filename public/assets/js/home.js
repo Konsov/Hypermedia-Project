@@ -36,15 +36,17 @@ $(window).on("load",function () {
                         elem +='</div>';
                         elem +='</div>';
                         elem +='</div>';
-                        elem +='</div>';        
-                        elem +='<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">';
-                        elem +='<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
-                        elem +='<span class="sr-only">Previous</span>';
-                        elem +='</a>';
-                        elem +='<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">';
-                        elem +='<span class="carousel-control-next-icon" aria-hidden="true"></span>';
-                        elem +='<span class="sr-only">Next</span>';
-                        elem +='</a>';
+                        elem +='</div>';
+                        if(projects.length>1){        
+                            elem +='<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">';
+                            elem +='<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
+                            elem +='<span class="sr-only">Previous</span>';
+                            elem +='</a>';
+                            elem +='<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">';
+                            elem +='<span class="carousel-control-next-icon" aria-hidden="true"></span>';
+                            elem +='<span class="sr-only">Next</span>';
+                            elem +='</a>';
+                        }
                         elem +='</div>';
                         elem +='</div>';
 
