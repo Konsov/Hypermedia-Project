@@ -209,9 +209,9 @@ $(window).on("load",function () {
                             elem +='<ol class="carousel-indicators">'
                             for(let j=0; j < events.length ;j++){
                                 if (j==0){
-                                    elem +='<li data-target="#carouselExampleCaptions" data-slide-to="'+j+'" class="active"></li>'
+                                    elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="'+j+'" class="active"></li>'
                                 } else {
-                                    elem +='<li data-target="#carouselExampleCaptions" data-slide-to="'+j+'"></li>'
+                                    elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="'+j+'"></li>'
                                 }
                             }
                             elem +='</ol>'

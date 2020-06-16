@@ -103,9 +103,13 @@ $(window).on("load",function () {
                 elem +='<div class="events">'
                 elem +='<div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel" >'
                 elem +='<ol class="carousel-indicators">'
-                elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>'
-                elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>'
-                elem += '<li data-target="#carouselExampleCaptions2" data-slide-to="2"></li>'
+                for(let j=0; j < events.length-1 ;j++){
+                    if (j==0){
+                        elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="'+j+'" class="active"></li>'
+                    } else {
+                        elem +='<li data-target="#carouselExampleCaptions2" data-slide-to="'+j+'"></li>'
+                    }
+                }
                 elem +='</ol>'
                 elem += '<div id="carousel-events" class="carousel-inner">'
 
